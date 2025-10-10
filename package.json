@@ -1,0 +1,31 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "name": "pontua-dev",
+    "private": true,
+    "description": "Sistema de pontuação de tarefas semanais do departamento de dev's.",
+    "version": "1.0.0",
+    "author": {
+        "name": "Júlio Cézar P. Camargo",
+        "email": "juliocezarpvh@hotmail.com"
+    },
+    "keywords": [
+        "laravel",
+        "framework",
+        "gestão",
+        "gerenciamento",
+        "desenvolvedores",
+        "dev",
+        "pontuação",
+        "pontua",
+        "tarefas",
+        "produtividade",
+        "desempenho",
+        "avaliação",
+        "equipe",
+        "classificação"
+    ],
+    "engines": {
+        "php": ">=8.2",
+        "node": ">=18.0"
+    }
+}
