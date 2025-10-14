@@ -23,21 +23,21 @@ https://getemoji.com
 </div>
 
 <div align="center">
-    <a href="https://laravel.com/">
-        <img src="https://img.shields.io/badge/Made%20with%20framework:-Laravel%2012%20-gray.svg?colorA=EF6161&amp;colorB=FF2D20&amp;style=for-the-badge" alt="Laravel-badge" style="max-width: 100%;">
+  <a href="https://laravel.com/">
+    <img src="https://img.shields.io/badge/Made%20with%20framework:-Laravel%2012%20-gray.svg?colorA=EF6161&amp;colorB=FF2D20&amp;style=for-the-badge" alt="Laravel-badge" style="max-width: 100%;">
     </a>
-    <a href="https://www.php.net/">
-        <img src="https://img.shields.io/badge/Made%20with%20language:-PHP%208.2%20-gray.svg?colorA=8C96C6&amp;colorB=777BB4&amp;style=for-the-badge" alt="PHP-badge" style="max-width: 100%;">
-    </a>
+  <a href="https://www.php.net/">
+    <img src="https://img.shields.io/badge/Made%20with%20language:-PHP%208.2%20-gray.svg?colorA=8C96C6&amp;colorB=777BB4&amp;style=for-the-badge" alt="PHP-badge" style="max-width: 100%;">
+  </a>
 </div>
 
 <div align="center">
-    <a href="https://getbootstrap.com/">
-        <img src="https://img.shields.io/badge/Made%20with%20library:-Bootstrap%204.5%20-gray.svg?colorA=9B7AD5&amp;colorB=7952B3&amp;style=for-the-badge" alt="Bootstrap-badge" style="max-width: 100%;">
-    </a>
-    <a href="https://jquery.com/">
-        <img src="https://img.shields.io/badge/Made%20with%20library:-jQuery%203.5%20-gray.svg?colorA=2B90D9&amp;colorB=0769AD&amp;style=for-the-badge" alt="jQuery-badge" style="max-width: 100%;">
-    </a>
+  <a href="https://getbootstrap.com/">
+      <img src="https://img.shields.io/badge/Made%20with%20library:-Bootstrap%204.5%20-gray.svg?colorA=9B7AD5&amp;colorB=7952B3&amp;style=for-the-badge" alt="Bootstrap-badge" style="max-width: 100%;">
+  </a>
+  <a href="https://jquery.com/">
+      <img src="https://img.shields.io/badge/Made%20with%20library:-jQuery%203.5%20-gray.svg?colorA=2B90D9&amp;colorB=0769AD&amp;style=for-the-badge" alt="jQuery-badge" style="max-width: 100%;">
+  </a>
 </div>
 
 <br>
@@ -45,14 +45,15 @@ https://getemoji.com
 <div align="center">
   <a href="#-requisitos">Requisitos</a> &#xa0; • &#xa0;
   <a href="#-tecnologias-utilizadas">Tecnologias</a> &#xa0; • &#xa0;
-  <a href="#-histórico-de-alterações">Changelog</a> &#xa0; • &#xa0;
+  <a href="#-changelog">Changelog</a> &#xa0; • &#xa0;
+  <a href="#-contribuições">Contribuições</a> &#xa0; • &#xa0;
   <a href="#-instalação">Instalação</a> &#xa0; • &#xa0;
   <a href="#-licença">Licença</a>
 </div>
 
 <!-- ABOUT THE PROJECT -->
 
-## 📝 Sobre o Projeto
+## Sobre o projeto
 
 O **PontuaDev** é um sistema de gerenciamento para equipes de desenvolvedores, permitindo:
 
@@ -61,11 +62,39 @@ O **PontuaDev** é um sistema de gerenciamento para equipes de desenvolvedores, 
 - Sistema de acompanhamento de desempenho
 - Gerenciamento de prazos e entregas
 
+
+<div align="center">
+  <table>
+    <tr>
+      <th align="center">Documentação traduzida</th>
+      <th align="center">Link</th>
+    </tr>
+    <tr>
+      <td>
+        <img align="center" src="https://cdn-icons-png.flaticon.com/512/197/197386.png" alt="Português" width="22"/> 
+        Português (Brasil)
+      </td>
+      <td align="center">
+        <a href="README.md">README.md</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img align="center" src="https://cdn-icons-png.flaticon.com/512/197/197374.png" alt="English" width="22"/> 
+        English
+      </td>
+      <td align="center">
+        <a href="docs/translations/README.en.md">README.en.md</a>
+      </td>
+    </tr>
+  </table>
+</div>
+
 <div align="left">
   <h6><a href="#pontuadev"> Voltar para o início ↺</a></h6>
 </div>
 
-## 📋 Requisitos
+## Requisitos
 
 > [!IMPORTANT]  
 > Certifique-se de ter os seguintes requisitos antes de iniciar:
@@ -84,7 +113,7 @@ O **PontuaDev** é um sistema de gerenciamento para equipes de desenvolvedores, 
   <h6><a href="#pontuadev"> Voltar para o início ↺</a></h6>
 </div>
 
-## 💻 Tecnologias Utilizadas
+## Tecnologias utilizadas
 
 <a href="https://laravel.com/">
   <img src="https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel-badge">
@@ -103,7 +132,9 @@ O **PontuaDev** é um sistema de gerenciamento para equipes de desenvolvedores, 
   <h6><a href="#pontuadev"> Voltar para o início ↺</a></h6>
 </div>
 
-## 🗒️ Histórico de Alterações
+<!-- CHANGELOG -->
+
+## Changelog
 
 O projeto mantém um histórico de alterações detalhado para cada versão, incluindo:
 
@@ -112,13 +143,32 @@ O projeto mantém um histórico de alterações detalhado para cada versão, inc
 - Correções de bugs
 - Visualizações da interface com capturas de tela
 
-Consulte o [CHANGELOG](CHANGELOG.md) para ver o histórico completo de alterações e capturas de tela da interface.
+Consulte o [CHANGELOG.md](CHANGELOG.md) para ver o histórico completo de alterações e capturas de tela da interface.
 
 <div align="left">
   <h6><a href="#pontuadev"> Voltar para o início ↺</a></h6>
 </div>
 
-## 🚀 Instalação
+<!-- CONTRIBUTIONS -->
+
+## Contribuições
+
+Contribuições ao projeto são bem vindas! \
+Se você deseja contribuir para este projeto, há várias maneiras de fazer isso. Você pode:
+- Reportar bugs ou problemas;
+- Propor novos recursos ou melhorias;
+- Ajudar a melhorar a documentação;
+- Compartilhar o projeto com outras pessoas.
+
+Consulte o guia [CONTRIBUTING.md](CONTRIBUTING.md) para saber mais sobre como contribuir.
+
+<div align="left">
+  <h6><a href="#pontuadev"> Voltar para o início ↺</a></h6>
+</div>
+
+<!-- INSTALLATION -->
+
+## Instalação
 
 1. Clone o repositório
 ```bash
@@ -191,7 +241,9 @@ php artisan serve
   <h6><a href="#pontuadev"> Voltar para o início ↺</a></h6>
 </div>
 
-## 📝 Licença
+<!-- LICENSE -->
+
+## Licença
 
 Este projeto está licenciado sob uma licença personalizada que permite uso e modificação privada, mas **proíbe uso comercial**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
@@ -205,7 +257,7 @@ Para uso comercial deste software, entre em contato com o autor em juliocezarpvh
 
 <!-- AUTHOR -->
 
-## 👤 Autor
+## Autor
 
 <table>
   <tr>

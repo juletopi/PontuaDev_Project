@@ -1,24 +1,20 @@
-<!--
-<h1>Changelog</h1>
+<h2>Changelog</h2>
 
-Todas as alterações notáveis neste projeto serão documentadas neste arquivo.
-
-O formato é baseado em Keep a Changelog (https://keepachangelog.com/pt-BR/1.0.0/),
-e este projeto adere ao Versionamento Semântico (https://semver.org/lang/pt-BR/).
--->
-
-<h2>
+<details open>
+<summary>
+  <h2 style="display: inline-block;">
     <a href="https://github.com/juletopi/PontuaDev_Project/releases/tag/v1.0">[v1.0]</a> - 10/10/2025
-</h2>
+  </h2>
+</summary>
 
 <h3>Adicionado</h3>
 
 <div>
-    <h4>Interface de gerenciamento de desenvolvedores</h4>
-    <img src="docs/images/v1.0/1-gerenciar-devs.jpeg" alt="Gerenciar desenvolvedores" title="Interface de gerenciamento de devs" style="max-width: 80%; border-radius: 8px;">
+  <h4>Interface de gerenciamento de desenvolvedores</h4>
+  <img src="docs/images/v1.0/1-gerenciar-devs.jpeg" alt="Gerenciar desenvolvedores" title="Interface de gerenciamento de devs" style="max-width: 80%; border-radius: 8px;">
 </div>
 
-<h5>Gerenciar desenvolvedores</h5>
+<h4>Gerenciar desenvolvedores</h4>
 
 - Card de listagem dos devs com as informações de avatar, faixa, nome, cargo, experiência, email
 - Botões de ações: Editar e Deletar
@@ -28,31 +24,31 @@ e este projeto adere ao Versionamento Semântico (https://semver.org/lang/pt-BR/
   - Botão "Ver mais" para acesso à interface de gerenciamento completo
 
 <table>
-    <tr>
-        <td width="50%">
-            <img src="docs/images/v1.0/2-adicionar-dev.jpeg" alt="Adicionar dev" title="Adicionar dev" style="width: 100%; border-radius: 8px;">
-            <h5 align="center">Adicionar desenvolvedor</h5>
-            <ul>
-                <li>Botão "Adicionar dev" que abre um formulário de cadastro</li>
-                <li>Formulário com drag and drop para avatar</li>
-                <li>Campos para nome, cargo, email e experiência</li>
-                <li>Seleção de faixa por cores (branca até preta)</li>
-            </ul>
-        </td>
-            <td width="50%">
-            <img src="docs/images/v1.0/3-editar-dev.jpeg" alt="Editar dev" title="Editar dev" style="width: 100%; border-radius: 8px;">
-            <h5 align="center">Editar desenvolvedor</h5>
-            <ul>
-                <li>Botão "Editar" que abre o formulário de edição</li>
-                <li>Formulário pré-preenchido com dados atuais</li>
-                <li>Atualização instantânea após confirmação</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
+  <tr>
+    <td width="50%">
+      <img src="docs/images/v1.0/2-adicionar-dev.jpeg" alt="Adicionar dev" title="Adicionar dev" style="width: 100%; border-radius: 8px;">
+      <h4 align="center">Adicionar desenvolvedor</h4>
+      <ul>
+        <li>Botão "Adicionar dev" que abre um formulário de cadastro</li>
+        <li>Formulário com drag and drop para avatar</li>
+        <li>Campos para nome, cargo, email e experiência</li>
+        <li>Seleção de faixa por cores (branca até preta)</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <img src="docs/images/v1.0/3-editar-dev.jpeg" alt="Editar dev" title="Editar dev" style="width: 100%; border-radius: 8px;">
+      <h4 align="center">Editar desenvolvedor</h4>
+      <ul>
+        <li>Botão "Editar" que abre o formulário de edição</li>
+        <li>Formulário pré-preenchido com dados atuais</li>
+        <li>Atualização instantânea após confirmação</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
     <td>
       <img src="docs/images/v1.0/4-excluir-dev.jpeg" alt="Excluir dev" title="Excluir dev" style="width: 100%; border-radius: 8px;">
-      <h5 align="center">Excluir desenvolvedor</h5>
+      <h4 align="center">Excluir desenvolvedor</h4>
       <ul>
         <li>Botão "Deletar" com modal de confirmação</li>
         <li>Proteção contra exclusões acidentais</li>
@@ -61,14 +57,12 @@ e este projeto adere ao Versionamento Semântico (https://semver.org/lang/pt-BR/
   </tr>
 </table>
 
-<br>
-
 <div>
-    <h4>Interface de gerenciamento de tarefas</h4>
-    <img src="docs/images/v1.0/5-gerenciar-tarefas.jpeg" alt="Gerenciar tarefas" title="Interface de gerenciamento de tarefas" style="max-width: 80%; border-radius: 8px;">
+  <h4>Interface de gerenciamento de tarefas</h4>
+  <img src="docs/images/v1.0/5-gerenciar-tarefas.jpeg" alt="Gerenciar tarefas" title="Interface de gerenciamento de tarefas" style="max-width: 80%; border-radius: 8px;">
 </div>
 
-<h5>Gerenciar tarefas</h5>
+<h4>Gerenciar tarefas</h4>
 
 - Tabela completa com ordenação e filtros
 - Visualização de todas as tarefas do sistema
@@ -78,7 +72,7 @@ e este projeto adere ao Versionamento Semântico (https://semver.org/lang/pt-BR/
   <tr>
     <td width="50%">
       <img src="docs/images/v1.0/6-adicionar-tarefa.jpeg" alt="Adicionar tarefa" title="Adicionar tarefa" style="width: 100%; border-radius: 8px;">
-      <h5 align="center">Adicionar tarefa</h5>
+      <h4 align="center">Adicionar tarefa</h4>
       <ul>
         <li>Botão "Adicionar tarefa" na interface</li>
         <li>Seleção do desenvolvedor responsável</li>
@@ -88,7 +82,7 @@ e este projeto adere ao Versionamento Semântico (https://semver.org/lang/pt-BR/
     </td>
     <td width="50%">
       <img src="docs/images/v1.0/7-editar-tarefa.jpeg" alt="Editar tarefa" title="Editar tarefa" style="width: 100%; border-radius: 8px;">
-      <h5 align="center">Editar tarefa</h5>
+      <h4 align="center">Editar tarefa</h4>
       <ul>
         <li>Formulário pré-preenchido com dados atuais</li>
         <li>Modificação de qualquer propriedade</li>
@@ -99,7 +93,7 @@ e este projeto adere ao Versionamento Semântico (https://semver.org/lang/pt-BR/
   <tr>
     <td>
       <img src="docs/images/v1.0/8-ver-tarefa.jpeg" alt="Ver tarefa" title="Ver detalhes da tarefa" style="width: 100%; border-radius: 8px;">
-      <h5 align="center">Ver detalhes</h5>
+      <h4 align="center">Ver detalhes</h4>
       <ul>
         <li>Botão "Ver" que abre modal com detalhes</li>
         <li>Visualização completa de informações</li>
@@ -108,7 +102,7 @@ e este projeto adere ao Versionamento Semântico (https://semver.org/lang/pt-BR/
     </td>
     <td>
       <img src="docs/images/v1.0/9-ver-tarefa.jpeg" alt="Excluir tarefa" title="Excluir tarefa" style="width: 100%; border-radius: 8px;">
-      <h5 align="center">Excluir tarefa</h5>
+      <h4 align="center">Excluir tarefa</h4>
       <ul>
         <li>Modal de confirmação para exclusão</li>
         <li>Proteção contra exclusões acidentais</li>
@@ -118,11 +112,11 @@ e este projeto adere ao Versionamento Semântico (https://semver.org/lang/pt-BR/
 </table>
 
 <div>
-    <h4>Amostragem dinâmica de dados de Pontuação e Tarefas</h4>
-    <img src="docs/images/v1.0/10-metricas-devs-tarefas.jpeg" alt="Métricas de desenvolvedores" title="Métricas e pontuação" style="max-width: 80%; border-radius: 8px;">
+  <h4>Amostragem dinâmica de dados de Pontuação e Tarefas</h4>
+  <img src="docs/images/v1.0/10-metricas-devs-tarefas.jpeg" alt="Métricas de desenvolvedores" title="Métricas e pontuação" style="max-width: 80%; border-radius: 8px;">
 </div>
 
-<h5>Métricas de desenvolvedores</h5>
+<h4>Métricas de desenvolvedores</h4>
 
 - Mini-avatar do desenvolvedor para identificação rápida
 - **Métricas detalhadas**:
@@ -135,11 +129,11 @@ e este projeto adere ao Versionamento Semântico (https://semver.org/lang/pt-BR/
   - Comparativo de ranking entre desenvolvedores
 
 <div>
-    <h4>Filtragem básica e avançada</h4>
-    <img src="docs/images/v1.0/11-filtros-avançados.jpeg" alt="Filtros básicos e avançados" title="Filtros básicos e avançados" style="max-width: 80%; border-radius: 8px;">
+  <h4>Filtragem básica e avançada</h4>
+  <img src="docs/images/v1.0/11-filtros-avançados.jpeg" alt="Filtros básicos e avançados" title="Filtros básicos e avançados" style="max-width: 80%; border-radius: 8px;">
 </div>
 
-<h5>Filtros básicos e avançados</h5>
+<h4>Filtros básicos e avançados</h4>
 
 - **Filtros temporais**:
   - Seleção de semana inicial e final
@@ -162,3 +156,5 @@ e este projeto adere ao Versionamento Semântico (https://semver.org/lang/pt-BR/
 - Configuração do README com instruções de instalação e uso
 - Configuração do CHANGELOG para controle de versões
 - Configuração do LICENSE com licença Creative Commons BY-NC 4.0
+
+</details>
