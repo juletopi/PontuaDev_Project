@@ -11,7 +11,7 @@ https://getemoji.com
 
 <div align="center">
   <a href="">
-    <img src="public/img/PontuaDev.svg" alt="PontuaDev-Logo" width="160px" title="Sistema de Gerenciamento de Desenvolvedores">
+    <img src="https://github.com/user-attachments/assets/549a8788-f8d4-42f3-b750-9fff9092a252" alt="PontuaDev-Logo" width="230px" title="Sistema de Gerenciamento de Desenvolvedores">
   </a>
   <h2 align="center">PontuaDev</h2>
 </div>
@@ -24,7 +24,7 @@ https://getemoji.com
 
 <div align="center">
     <a href="https://laravel.com/">
-        <img src="https://img.shields.io/badge/Made%20with%20framework:-Laravel%2012%20-gray.svg?colorA=EA5151&amp;colorB=FF2D20&amp;style=for-the-badge" alt="Laravel-badge" style="max-width: 100%;">
+        <img src="https://img.shields.io/badge/Made%20with%20framework:-Laravel%2012%20-gray.svg?colorA=EF6161&amp;colorB=FF2D20&amp;style=for-the-badge" alt="Laravel-badge" style="max-width: 100%;">
     </a>
     <a href="https://www.php.net/">
         <img src="https://img.shields.io/badge/Made%20with%20language:-PHP%208.2%20-gray.svg?colorA=8C96C6&amp;colorB=777BB4&amp;style=for-the-badge" alt="PHP-badge" style="max-width: 100%;">
