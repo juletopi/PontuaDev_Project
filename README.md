@@ -45,6 +45,7 @@ https://getemoji.com
 <div align="center">
   <a href="#-requisitos">Requisitos</a> &#xa0; • &#xa0;
   <a href="#-tecnologias-utilizadas">Tecnologias</a> &#xa0; • &#xa0;
+  <a href="#-histórico-de-alterações">Changelog</a> &#xa0; • &#xa0;
   <a href="#-instalação">Instalação</a> &#xa0; • &#xa0;
   <a href="#-licença">Licença</a>
 </div>
@@ -97,6 +98,21 @@ O **PontuaDev** é um sistema de gerenciamento para equipes de desenvolvedores, 
 <a href="https://jquery.com/">
   <img src="https://img.shields.io/badge/jQuery-3.5-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery-badge">
 </a>
+
+<div align="left">
+  <h6><a href="#pontuadev"> Voltar para o início ↺</a></h6>
+</div>
+
+## 🗒️ Histórico de Alterações
+
+O projeto mantém um histórico de alterações detalhado para cada versão, incluindo:
+
+- Novas funcionalidades adicionadas
+- Alterações em funcionalidades existentes
+- Correções de bugs
+- Visualizações da interface com capturas de tela
+
+Consulte o [CHANGELOG](CHANGELOG.md) para ver o histórico completo de alterações e capturas de tela da interface.
 
 <div align="left">
   <h6><a href="#pontuadev"> Voltar para o início ↺</a></h6>
