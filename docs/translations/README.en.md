@@ -62,32 +62,30 @@ https://getemoji.com
 - Performance tracking system
 - Deadline and delivery management
 
-<div align="center">
-  <table>
-    <tr>
-      <th align="center">Translated docummentation</th>
-      <th align="center">Link</th>
-    </tr>
-    <tr>
-      <td>
-        <img align="center" src="https://cdn-icons-png.flaticon.com/512/197/197386.png" alt="Português" width="22"/> 
-        Português (Brasil)
-      </td>
-      <td align="center">
-        <a href="README.md">README.md</a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img align="center" src="https://cdn-icons-png.flaticon.com/512/197/197374.png" alt="English" width="22"/> 
-        English
-      </td>
-      <td align="center">
-        <a href="docs/translations/README.en.md">README.en.md</a>
-      </td>
-    </tr>
-  </table>
-</div>
+<table>
+  <tr>
+    <th align="center">Translated docummentation</th>
+    <th align="center">Link</th>
+  </tr>
+  <tr>
+    <td>
+      <img align="center" src="https://cdn-icons-png.flaticon.com/512/197/197386.png" alt="Português" width="22"/> 
+      Português (Brasil)
+    </td>
+    <td align="center">
+      <a href="README.md">README.md</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img align="center" src="https://cdn-icons-png.flaticon.com/512/197/197374.png" alt="English" width="22"/> 
+      English
+    </td>
+    <td align="center">
+      <a href="docs/translations/README.en.md">README.en.md</a>
+    </td>
+  </tr>
+</table>
 
 <div align="left">
   <h6><a href="#pontuadev"> Back to top ↺</a></h6>
