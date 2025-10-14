@@ -73,7 +73,7 @@ https://getemoji.com
       Português (Brasil)
     </td>
     <td align="center">
-      <a href="README.md">README.md</a>
+      <a href="blob/master/README.md">README.md</a>
     </td>
   </tr>
   <tr>
