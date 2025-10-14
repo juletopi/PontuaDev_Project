@@ -73,7 +73,7 @@ https://getemoji.com
       Português (Brasil)
     </td>
     <td align="center">
-      <a href="blob/master/README.md">README.md</a>
+      <a href="https://github.com/juletopi/PontuaDev_Project/blob/master/README.md">README.md</a>
     </td>
   </tr>
   <tr>
