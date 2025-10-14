@@ -53,7 +53,7 @@ https://getemoji.com
 
 ## 📝 Sobre o Projeto
 
-O **PontuaDev** é um sistema de gerenciamento para equipes de desenvolvimento, permitindo:
+O **PontuaDev** é um sistema de gerenciamento para equipes de desenvolvedores, permitindo:
 
 - Cadastro de desenvolvedores com informações detalhadas
 - Gerenciamento de tarefas com atribuição de pontos
@@ -179,7 +179,7 @@ php artisan serve
 
 Este projeto está licenciado sob uma licença personalizada que permite uso e modificação privada, mas **proíbe uso comercial**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-Para uso comercial deste software, entre em contato com o autor em juliocezarpvh@hotmail.com para obter uma licença comercial.
+Para uso comercial deste software, entre em contato com o autor em juliocezarpvh@hotmail.com.
 
 <div align="left">
   <h6><a href="#pontuadev"> Voltar para o início ↺</a></h6>
