@@ -165,7 +165,7 @@ Si desea contribuir a este proyecto, hay varias formas de hacerlo. Puede:
 - Ayudar a mejorar la documentación;
 - Compartir el proyecto con otras personas.
 
-Consulte la guía [CONTRIBUTING.md](../CONTRIBUTING.md) para obtener más información sobre cómo contribuir.
+Consulte la guía [CONTRIBUTING.md](https://github.com/juletopi/PontuaDev_Project/blob/master/CONTRIBUTING.md) para obtener más información sobre cómo contribuir.
 
 <div align="left">
   <h6><a href="#pontuadev"> Volver al inicio ↺</a></h6>
@@ -250,7 +250,7 @@ php artisan serve
 
 ## Licencia
 
-Este proyecto está licenciado bajo una licencia personalizada que permite el uso y modificación privada, pero **prohíbe el uso comercial**. Consulte el archivo [LICENSE](../LICENSE) para más detalles.
+Este proyecto está licenciado bajo una licencia personalizada que permite el uso y modificación privada, pero **prohíbe el uso comercial**. Consulte el archivo [LICENSE](https://github.com/juletopi/PontuaDev_Project/blob/master/LICENSE) para más detalles.
 
 Para uso comercial de este software, contacte con el autor en juliocezarpvh@hotmail.com.
 

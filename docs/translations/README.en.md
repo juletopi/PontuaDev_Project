@@ -165,7 +165,7 @@ If you wish to contribute to this project, there are several ways to do so. You 
 - Help improve the documentation;
 - Share the project with other people.
 
-Check out the [CONTRIBUTING.md](../CONTRIBUTING.md) guide to learn more about how to contribute.
+Check out the [CONTRIBUTING.md](https://github.com/juletopi/PontuaDev_Project/blob/master/CONTRIBUTING.md) guide to learn more about how to contribute.
 
 <div align="left">
   <h6><a href="#pontuadev"> Back to top ↺</a></h6>
@@ -250,7 +250,7 @@ php artisan serve
 
 ## License
 
-This project is licensed under a custom license that allows private use and modification, but **prohibits commercial use**. See the [LICENSE](../LICENSE) file for more details.
+This project is licensed under a custom license that allows private use and modification, but **prohibits commercial use**. See the [LICENSE](https://github.com/juletopi/PontuaDev_Project/blob/master/LICENSE) file for more details.
 
 For commercial use of this software, contact the author at juliocezarpvh@hotmail.com.
 
