@@ -34,6 +34,7 @@
         <li>Campos para nome, cargo, email e experiência</li>
         <li>Seleção de faixa por cores (branca até preta)</li>
       </ul>
+      <br>
     </td>
     <td width="50%" valign="top" style="vertical-align: top;">
       <img align="center" src="docs/images/v1.0/3-editar-dev.jpeg" alt="Editar dev" title="Editar dev" style="width: 100%;">
@@ -43,6 +44,7 @@
         <li>Formulário pré-preenchido com dados atuais</li>
         <li>Atualização instantânea após confirmação</li>
       </ul>
+      <br>
     </td>
   </tr>
   <tr>
@@ -53,6 +55,7 @@
         <li>Botão "Deletar" com modal de confirmação</li>
         <li>Proteção contra exclusões acidentais</li>
       </ul>
+      <br>
     </td>
   </tr>
 </table>
@@ -79,6 +82,7 @@
         <li>Campos para semana, nome, descrição e período</li>
         <li>Opções de status e pontuação configuráveis</li>
       </ul>
+      <br>
     </td>
     <td width="50%" valign="top" style="vertical-align: top;">
       <img align="center" src="docs/images/v1.0/7-editar-tarefa.jpeg" alt="Editar tarefa" title="Editar tarefa" style="width: 100%;">
@@ -88,6 +92,7 @@
         <li>Modificação de qualquer propriedade</li>
         <li>Atualização instantânea após confirmação</li>
       </ul>
+      <br>
     </td>
   </tr>
   <tr>
@@ -99,6 +104,7 @@
         <li>Visualização completa de informações</li>
         <li>Descrição e período da tarefa</li>
       </ul>
+      <br>
     </td>
     <td valign="top" style="vertical-align: top;">
       <img align="top" src="docs/images/v1.0/9-ver-tarefa.jpeg" alt="Excluir tarefa" title="Excluir tarefa" style="width: 100%;">
@@ -107,6 +113,7 @@
         <li>Modal de confirmação para exclusão</li>
         <li>Proteção contra exclusões acidentais</li>
       </ul>
+      <br>
     </td>
   </tr>
 </table>
