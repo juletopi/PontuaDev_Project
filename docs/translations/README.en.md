@@ -14,12 +14,9 @@ https://getemoji.com
     <img src="https://github.com/user-attachments/assets/549a8788-f8d4-42f3-b750-9fff9092a252" alt="PontuaDev-Logo" width="230px" title="Developer Management System">
   </a>
   <h2 align="center">PontuaDev</h2>
-</div>
-
-<div align="center">
- 
-  • System for managing and scoring developers and their tasks.
- 
+  <p align="center">
+    Developer and task management system.
+  </p>
 </div>
 
 <div align="center">
@@ -43,13 +40,13 @@ https://getemoji.com
 <br>
 
 <div align="center">
-  <a href="#-requirements">Requirements</a> &#xa0; • &#xa0;
-  <a href="#-technologies-used">Technologies</a> &#xa0; • &#xa0;
-  <a href="#-changelog">Changelog</a> &#xa0; • &#xa0;
-  <a href="#-contributions">Contributions</a> &#xa0; • &#xa0;
-  <a href="#-installation">Installation</a> &#xa0; • &#xa0;
-  <a href="#-license">License</a>
+  <a href="#changelog">Changelog</a> &#xa0; • &#xa0;
+  <a href="#contributions">Contributions</a> &#xa0; • &#xa0;
+  <a href="#installation">Installation</a> &#xa0; • &#xa0;
+  <a href="#license">License</a>
 </div>
+
+<br>
 
 <!-- ABOUT THE PROJECT -->
 
@@ -61,6 +58,8 @@ https://getemoji.com
 - Task management with point attribution
 - Performance tracking system
 - Deadline and delivery management
+
+<br>
 
 <table>
   <tr>

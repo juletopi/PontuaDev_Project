@@ -9,9 +9,9 @@
 
 <h3>Adicionado</h3>
 
-<div>
+<div align="center">
   <h4>Interface de gerenciamento de desenvolvedores</h4>
-  <img src="docs/images/v1.0/1-gerenciar-devs.jpeg" alt="Gerenciar desenvolvedores" title="Interface de gerenciamento de devs" style="max-width: 80%; border-radius: 8px;">
+  <img src="docs/images/v1.0/1-gerenciar-devs.jpeg" alt="Gerenciar desenvolvedores" title="Interface de gerenciamento de devs" style="width: 70%;">
 </div>
 
 <h4>Gerenciar desenvolvedores</h4>
@@ -26,7 +26,7 @@
 <table>
   <tr>
     <td width="50%">
-      <img src="docs/images/v1.0/2-adicionar-dev.jpeg" alt="Adicionar dev" title="Adicionar dev" style="width: 100%; border-radius: 8px;">
+      <img src="docs/images/v1.0/2-adicionar-dev.jpeg" alt="Adicionar dev" title="Adicionar dev" style="width: 100%;">
       <h4 align="center">Adicionar desenvolvedor</h4>
       <ul>
         <li>Botão "Adicionar dev" que abre um formulário de cadastro</li>
@@ -36,7 +36,7 @@
       </ul>
     </td>
     <td width="50%">
-      <img src="docs/images/v1.0/3-editar-dev.jpeg" alt="Editar dev" title="Editar dev" style="width: 100%; border-radius: 8px;">
+      <img src="docs/images/v1.0/3-editar-dev.jpeg" alt="Editar dev" title="Editar dev" style="width: 100%;">
       <h4 align="center">Editar desenvolvedor</h4>
       <ul>
         <li>Botão "Editar" que abre o formulário de edição</li>
@@ -47,7 +47,7 @@
   </tr>
   <tr>
     <td>
-      <img src="docs/images/v1.0/4-excluir-dev.jpeg" alt="Excluir dev" title="Excluir dev" style="width: 100%; border-radius: 8px;">
+      <img src="docs/images/v1.0/4-excluir-dev.jpeg" alt="Excluir dev" title="Excluir dev" style="width: 100%;">
       <h4 align="center">Excluir desenvolvedor</h4>
       <ul>
         <li>Botão "Deletar" com modal de confirmação</li>
@@ -59,7 +59,7 @@
 
 <div>
   <h4>Interface de gerenciamento de tarefas</h4>
-  <img src="docs/images/v1.0/5-gerenciar-tarefas.jpeg" alt="Gerenciar tarefas" title="Interface de gerenciamento de tarefas" style="max-width: 80%; border-radius: 8px;">
+  <img src="docs/images/v1.0/5-gerenciar-tarefas.jpeg" alt="Gerenciar tarefas" title="Interface de gerenciamento de tarefas" style="width: 70%;">
 </div>
 
 <h4>Gerenciar tarefas</h4>
@@ -71,7 +71,7 @@
 <table>
   <tr>
     <td width="50%">
-      <img src="docs/images/v1.0/6-adicionar-tarefa.jpeg" alt="Adicionar tarefa" title="Adicionar tarefa" style="width: 100%; border-radius: 8px;">
+      <img src="docs/images/v1.0/6-adicionar-tarefa.jpeg" alt="Adicionar tarefa" title="Adicionar tarefa" style="width: 100%;">
       <h4 align="center">Adicionar tarefa</h4>
       <ul>
         <li>Botão "Adicionar tarefa" na interface</li>
@@ -81,7 +81,7 @@
       </ul>
     </td>
     <td width="50%">
-      <img src="docs/images/v1.0/7-editar-tarefa.jpeg" alt="Editar tarefa" title="Editar tarefa" style="width: 100%; border-radius: 8px;">
+      <img src="docs/images/v1.0/7-editar-tarefa.jpeg" alt="Editar tarefa" title="Editar tarefa" style="width: 100%;">
       <h4 align="center">Editar tarefa</h4>
       <ul>
         <li>Formulário pré-preenchido com dados atuais</li>
@@ -92,7 +92,7 @@
   </tr>
   <tr>
     <td>
-      <img src="docs/images/v1.0/8-ver-tarefa.jpeg" alt="Ver tarefa" title="Ver detalhes da tarefa" style="width: 100%; border-radius: 8px;">
+      <img src="docs/images/v1.0/8-ver-tarefa.jpeg" alt="Ver tarefa" title="Ver detalhes da tarefa" style="width: 100%;">
       <h4 align="center">Ver detalhes</h4>
       <ul>
         <li>Botão "Ver" que abre modal com detalhes</li>
@@ -101,7 +101,7 @@
       </ul>
     </td>
     <td>
-      <img src="docs/images/v1.0/9-ver-tarefa.jpeg" alt="Excluir tarefa" title="Excluir tarefa" style="width: 100%; border-radius: 8px;">
+      <img src="docs/images/v1.0/9-ver-tarefa.jpeg" alt="Excluir tarefa" title="Excluir tarefa" style="width: 100%;">
       <h4 align="center">Excluir tarefa</h4>
       <ul>
         <li>Modal de confirmação para exclusão</li>
@@ -113,7 +113,7 @@
 
 <div>
   <h4>Amostragem dinâmica de dados de Pontuação e Tarefas</h4>
-  <img src="docs/images/v1.0/10-metricas-devs-tarefas.jpeg" alt="Métricas de desenvolvedores" title="Métricas e pontuação" style="max-width: 80%; border-radius: 8px;">
+  <img src="docs/images/v1.0/10-metricas-devs-tarefas.jpeg" alt="Métricas de desenvolvedores" title="Métricas e pontuação" style="width: 70%;">
 </div>
 
 <h4>Métricas de desenvolvedores</h4>
@@ -130,7 +130,7 @@
 
 <div>
   <h4>Filtragem básica e avançada</h4>
-  <img src="docs/images/v1.0/11-filtros-avançados.jpeg" alt="Filtros básicos e avançados" title="Filtros básicos e avançados" style="max-width: 80%; border-radius: 8px;">
+  <img src="docs/images/v1.0/11-filtros-avançados.jpeg" alt="Filtros básicos e avançados" title="Filtros básicos e avançados" style="width: 70%;">
 </div>
 
 <h4>Filtros básicos e avançados</h4>

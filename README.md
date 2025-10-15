@@ -14,12 +14,9 @@ https://getemoji.com
     <img src="https://github.com/user-attachments/assets/549a8788-f8d4-42f3-b750-9fff9092a252" alt="PontuaDev-Logo" width="230px" title="Sistema de Gerenciamento de Desenvolvedores">
   </a>
   <h2 align="center">PontuaDev</h2>
-</div>
-
-<div align="center">
- 
-  • Sistema para gerenciar e pontuar desenvolvedores e suas tarefas.
- 
+  <p align="center">
+    Sistema de gestão de desenvolvedores e tarefas.
+  </p>
 </div>
 
 <div align="center">
@@ -43,13 +40,13 @@ https://getemoji.com
 <br>
 
 <div align="center">
-  <a href="#-requisitos">Requisitos</a> &#xa0; • &#xa0;
-  <a href="#-tecnologias-utilizadas">Tecnologias</a> &#xa0; • &#xa0;
-  <a href="#-changelog">Changelog</a> &#xa0; • &#xa0;
-  <a href="#-contribuições">Contribuições</a> &#xa0; • &#xa0;
-  <a href="#-instalação">Instalação</a> &#xa0; • &#xa0;
-  <a href="#-licença">Licença</a>
+  <a href="#changelog">Changelog</a> &#xa0; • &#xa0;
+  <a href="#contribuições">Contribuições</a> &#xa0; • &#xa0;
+  <a href="#instalação">Instalação</a> &#xa0; • &#xa0;
+  <a href="#licença">Licença</a>
 </div>
+
+<br>
 
 <!-- ABOUT THE PROJECT -->
 
@@ -62,6 +59,7 @@ O **PontuaDev** é um sistema de gerenciamento para equipes de desenvolvedores, 
 - Sistema de acompanhamento de desempenho
 - Gerenciamento de prazos e entregas
 
+<br>
 
 <table>
   <tr>
