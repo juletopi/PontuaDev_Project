@@ -11,11 +11,11 @@ https://getemoji.com
 
 <div align="center">
   <a href="">
-    <img src="https://github.com/user-attachments/assets/549a8788-f8d4-42f3-b750-9fff9092a252" alt="PontuaDev-Logo" width="230px" title="Developer Management System">
+    <img src="https://github.com/user-attachments/assets/549a8788-f8d4-42f3-b750-9fff9092a252" alt="PontuaDev-Logo" width="230px" title="Sistema de Gestión de Desarrolladores">
   </a>
   <h2 align="center">PontuaDev</h2>
   <p align="center">
-    Developer and task management system.
+    Sistema de gestión de desarrolladores y tareas.
   </p>
 </div>
 
@@ -41,30 +41,30 @@ https://getemoji.com
 
 <div align="center">
   <a href="#changelog">Changelog</a> &#xa0; • &#xa0;
-  <a href="#contributions">Contributions</a> &#xa0; • &#xa0;
-  <a href="#installation">Installation</a> &#xa0; • &#xa0;
-  <a href="#license">License</a>
+  <a href="#contribuciones">Contribuciones</a> &#xa0; • &#xa0;
+  <a href="#instalación">Instalación</a> &#xa0; • &#xa0;
+  <a href="#licencia">Licencia</a>
 </div>
 
 <br>
 
 <!-- ABOUT THE PROJECT -->
 
-## About the project
+## Sobre el proyecto
 
-**PontuaDev** is a management system for developer teams, allowing:
+**PontuaDev** es un sistema de gestión para equipos de desarrolladores, que permite:
 
-- Registration of developers with detailed information
-- Task management with point attribution
-- Performance tracking system
-- Deadline and delivery management
+- Registro de desarrolladores con información detallada
+- Gestión de tareas con atribución de puntos
+- Sistema de seguimiento del rendimiento
+- Gestión de plazos y entregas
 
 <br>
 
 <table>
   <tr>
-    <th align="center">Translated documentation</th>
-    <th align="center">Link</th>
+    <th align="center">Documentación traducida</th>
+    <th align="center">Enlace</th>
   </tr>
   <tr>
     <td>
@@ -96,29 +96,29 @@ https://getemoji.com
 </table>
 
 <div align="left">
-  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
+  <h6><a href="#pontuadev"> Volver al inicio ↺</a></h6>
 </div>
 
-## Requirements
+## Requisitos
 
 > [!IMPORTANT]  
-> Make sure you have the following requirements before starting:
+> Asegúrese de cumplir con los siguientes requisitos antes de comenzar:
 
 <a href="https://www.php.net/">
-  <img src="https://img.shields.io/badge/PHP-8.2_or_higher-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP-badge">
+  <img src="https://img.shields.io/badge/PHP-8.2_o_superior-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP-badge">
 </a>
 <a href="https://getcomposer.org/">
-  <img src="https://img.shields.io/badge/Composer-2.0_or_higher-885630?style=for-the-badge&logo=composer&logoColor=white" alt="Composer-badge">
+  <img src="https://img.shields.io/badge/Composer-2.0_o_superior-885630?style=for-the-badge&logo=composer&logoColor=white" alt="Composer-badge">
 </a>
 <a href="https://www.postgresql.org/">
   <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL-badge">
 </a>
 
 <div align="left">
-  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
+  <h6><a href="#pontuadev"> Volver al inicio ↺</a></h6>
 </div>
 
-## Technologies Used
+## Tecnologías utilizadas
 
 <a href="https://laravel.com/">
   <img src="https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel-badge">
@@ -134,126 +134,126 @@ https://getemoji.com
 </a>
 
 <div align="left">
-  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
+  <h6><a href="#pontuadev"> Volver al inicio ↺</a></h6>
 </div>
 
 <!-- CHANGELOG -->
 
 ## Changelog
 
-The project maintains a detailed change history for each version, including:
+El proyecto mantiene un historial detallado de cambios para cada versión, incluyendo:
 
-- New features added
-- Changes to existing features
-- Bug fixes
-- Interface visualizations with screenshots
+- Nuevas funcionalidades añadidas
+- Cambios en funcionalidades existentes
+- Correcciones de errores
+- Visualizaciones de la interfaz con capturas de pantalla
 
-See the [CHANGELOG.md](../CHANGELOG.md) for the complete history of changes and interface screenshots.
+Consulte el [CHANGELOG.md](../CHANGELOG.md) para ver el historial completo de cambios y capturas de pantalla de la interfaz.
 
 <div align="left">
-  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
+  <h6><a href="#pontuadev"> Volver al inicio ↺</a></h6>
 </div>
 
 <!-- CONTRIBUTIONS -->
 
-## Contributions
+## Contribuciones
 
-Contributions to the project are welcome! \
-If you wish to contribute to this project, there are several ways to do so. You can:
-- Report bugs or issues;
-- Propose new features or improvements;
-- Help improve the documentation;
-- Share the project with other people.
+¡Las contribuciones al proyecto son bienvenidas! \
+Si desea contribuir a este proyecto, hay varias formas de hacerlo. Puede:
+- Reportar errores o problemas;
+- Proponer nuevas funcionalidades o mejoras;
+- Ayudar a mejorar la documentación;
+- Compartir el proyecto con otras personas.
 
-Check out the [CONTRIBUTING.md](../CONTRIBUTING.md) guide to learn more about how to contribute.
+Consulte la guía [CONTRIBUTING.md](../CONTRIBUTING.md) para obtener más información sobre cómo contribuir.
 
 <div align="left">
-  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
+  <h6><a href="#pontuadev"> Volver al inicio ↺</a></h6>
 </div>
 
 <!-- INSTALLATION -->
 
-## Installation
+## Instalación
 
-1. Clone the repository
+1. Clone el repositorio
 ```bash
-git clone https://github.com/your-username/pontuadev.git
+git clone https://github.com/su-usuario/pontuadev.git
 cd pontuadev
 ```
 
-2. Install PHP dependencies
+2. Instale las dependencias de PHP
 ```bash
 composer install
 ```
 
-3. Copy the environment file
+3. Copie el archivo de entorno
 ```bash
 cp .env.example .env
 ```
 
-4. Configure the database in the `.env` file
+4. Configure la base de datos en el archivo `.env`
 
 > [!NOTE]  
-> You can choose between PostgreSQL (recommended for production) or SQLite (simpler for testing).
+> Puede elegir entre PostgreSQL (recomendado para producción) o SQLite (más simple para pruebas).
 
-Option with PostgreSQL:
+Opción con PostgreSQL:
 ```
 DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
 DB_PORT=5432
 DB_DATABASE=pontuaDev
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
+DB_USERNAME=su_usuario
+DB_PASSWORD=su_contraseña
 ```
 
-Alternative option with SQLite (simpler for testing):
+Opción alternativa con SQLite (más simple para pruebas):
 ```
 DB_CONNECTION=sqlite
-DB_DATABASE=/absolute/path/to/database.sqlite
+DB_DATABASE=/ruta/absoluta/para/database.sqlite
 ```
 
-If you choose SQLite, create the empty file with the command:
+Si elige SQLite, cree el archivo vacío con el comando:
 ```bash
 touch database/database.sqlite
 ```
 
-5. Generate the application key
+5. Genere la clave de la aplicación
 ```bash
 php artisan key:generate
 ```
 
-6. Run migrations to create database tables
+6. Ejecute las migraciones para crear las tablas de la base de datos
 ```bash
 php artisan migrate
 ```
 
 > [!TIP]  
-> Optionally, you can populate the database with sample data:
+> Opcionalmente, puede poblar la base de datos con datos de ejemplo:
 > ```bash
 > php artisan db:seed
 > ```
-> Or do both in a single command:
+> O hacer ambos en un solo comando:
 > ```bash
 > php artisan migrate --seed
 > ```
 
-7. Start the server
+7. Inicie el servidor
 ```bash
 php artisan serve
 ```
 
 <div align="left">
-  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
+  <h6><a href="#pontuadev"> Volver al inicio ↺</a></h6>
 </div>
 
 <!-- LICENSE -->
 
-## License
+## Licencia
 
-This project is licensed under a custom license that allows private use and modification, but **prohibits commercial use**. See the [LICENSE](../LICENSE) file for more details.
+Este proyecto está licenciado bajo una licencia personalizada que permite el uso y modificación privada, pero **prohíbe el uso comercial**. Consulte el archivo [LICENSE](../LICENSE) para más detalles.
 
-For commercial use of this software, contact the author at juliocezarpvh@hotmail.com.
+Para uso comercial de este software, contacte con el autor en juliocezarpvh@hotmail.com.
 
 <div align="left">
-  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
+  <h6><a href="#pontuadev"> Volver al inicio ↺</a></h6>
 </div>

@@ -84,6 +84,15 @@ O **PontuaDev** é um sistema de gerenciamento para equipes de desenvolvedores, 
       <a href="docs/translations/README.en.md">README.en.md</a>
     </td>
   </tr>
+  <tr>
+    <td>
+      <img align="center" src="https://cdn-icons-png.flaticon.com/512/197/197593.png" alt="Español" width="22"/> 
+      Español
+    </td>
+    <td align="center">
+      <a href="docs/translations/README.es.md">README.es.md</a>
+    </td>
+  </tr>
 </table>
 
 <div align="left">
