@@ -25,8 +25,8 @@
 
 <table>
   <tr>
-    <td width="50%">
-      <img align="top" src="docs/images/v1.0/2-adicionar-dev.jpeg" alt="Adicionar dev" title="Adicionar dev" style="width: 100%;">
+    <td width="50%" valign="top" style="vertical-align: top;">
+      <img align="center" src="docs/images/v1.0/2-adicionar-dev.jpeg" alt="Adicionar dev" title="Adicionar dev" style="width: 100%;">
       <h4 align="center">Adicionar desenvolvedor</h4>
       <ul>
         <li>Botão "Adicionar dev" que abre um formulário de cadastro</li>
@@ -35,8 +35,8 @@
         <li>Seleção de faixa por cores (branca até preta)</li>
       </ul>
     </td>
-    <td width="50%">
-      <img align="top" src="docs/images/v1.0/3-editar-dev.jpeg" alt="Editar dev" title="Editar dev" style="width: 100%;">
+    <td width="50%" valign="top" style="vertical-align: top;">
+      <img align="center" src="docs/images/v1.0/3-editar-dev.jpeg" alt="Editar dev" title="Editar dev" style="width: 100%;">
       <h4 align="center">Editar desenvolvedor</h4>
       <ul>
         <li>Botão "Editar" que abre o formulário de edição</li>
@@ -46,8 +46,8 @@
     </td>
   </tr>
   <tr>
-    <td>
-      <img align="top" src="docs/images/v1.0/4-excluir-dev.jpeg" alt="Excluir dev" title="Excluir dev" style="width: 80%;">
+    <td valign="top" style="vertical-align: top;">
+      <img align="center" src="docs/images/v1.0/4-excluir-dev.jpeg" alt="Excluir dev" title="Excluir dev" style="width: 100%;">
       <h4 align="center">Excluir desenvolvedor</h4>
       <ul>
         <li>Botão "Deletar" com modal de confirmação</li>
@@ -70,8 +70,8 @@
 
 <table>
   <tr>
-    <td width="50%">
-      <img align="top" src="docs/images/v1.0/6-adicionar-tarefa.jpeg" alt="Adicionar tarefa" title="Adicionar tarefa" style="width: 100%;">
+    <td width="50%" valign="top" style="vertical-align: top;">
+      <img align="center" src="docs/images/v1.0/6-adicionar-tarefa.jpeg" alt="Adicionar tarefa" title="Adicionar tarefa" style="width: 100%;">
       <h4 align="center">Adicionar tarefa</h4>
       <ul>
         <li>Botão "Adicionar tarefa" na interface</li>
@@ -80,8 +80,8 @@
         <li>Opções de status e pontuação configuráveis</li>
       </ul>
     </td>
-    <td width="50%">
-      <img align="top" src="docs/images/v1.0/7-editar-tarefa.jpeg" alt="Editar tarefa" title="Editar tarefa" style="width: 100%;">
+    <td width="50%" valign="top" style="vertical-align: top;">
+      <img align="center" src="docs/images/v1.0/7-editar-tarefa.jpeg" alt="Editar tarefa" title="Editar tarefa" style="width: 100%;">
       <h4 align="center">Editar tarefa</h4>
       <ul>
         <li>Formulário pré-preenchido com dados atuais</li>
@@ -91,8 +91,8 @@
     </td>
   </tr>
   <tr>
-    <td>
-      <img align="top" src="docs/images/v1.0/8-ver-tarefa.jpeg" alt="Ver tarefa" title="Ver detalhes da tarefa" style="width: 100%;">
+    <td valign="top" style="vertical-align: top;">
+      <img align="center" src="docs/images/v1.0/8-ver-tarefa.jpeg" alt="Ver tarefa" title="Ver detalhes da tarefa" style="width: 100%;">
       <h4 align="center">Ver detalhes</h4>
       <ul>
         <li>Botão "Ver" que abre modal com detalhes</li>
@@ -100,8 +100,8 @@
         <li>Descrição e período da tarefa</li>
       </ul>
     </td>
-    <td>
-      <img align="top" src="docs/images/v1.0/9-ver-tarefa.jpeg" alt="Excluir tarefa" title="Excluir tarefa" style="width: 80%;">
+    <td valign="top" style="vertical-align: top;">
+      <img align="top" src="docs/images/v1.0/9-ver-tarefa.jpeg" alt="Excluir tarefa" title="Excluir tarefa" style="width: 100%;">
       <h4 align="center">Excluir tarefa</h4>
       <ul>
         <li>Modal de confirmação para exclusão</li>
