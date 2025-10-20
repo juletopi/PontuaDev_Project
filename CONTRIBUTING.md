@@ -31,8 +31,8 @@
       <div style="display: flex; justify-content: center;">
         <ul style="text-align: left; display: inline-block;">
           <strong>
-            <li>Conhecimento básico de Git (fork, clone, commit, push)</li>
             <li>Conta no GitHub</li>
+            <li>Conhecimento básico de Git (<code>fork</code>, <code>clone</code>, <code>commit</code>, <code>push</code>)</li>
             <li>Para contribuições de código: ambiente PHP/Laravel configurado</li>
             <li>Para contribuições de tradução: fluência no idioma de destino</li>
             <li>Padronização de mensagens de commit seguindo<br><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a>: <code>feat</code>, <code>fix</code>, <code>add</code>, <code>trans</code>, etc.</li>
@@ -148,7 +148,7 @@ Seja corrigindo um bug ou criando uma nova feature, para contribuir com código 
 
 ## Tem alguma pergunta que deseja fazer?
 
-- Faça qualquer pergunta sobre o repositório abrindo uma nova discussão na sessão de [Discussions](https://github.com/juletopi/PontuaDev_Project/discussions) deste repositório.
+- Faça qualquer pergunta sobre o repositório abrindo uma nova<br>discussão na sessão de [Discussions](https://github.com/juletopi/PontuaDev_Project/discussions) deste repositório.
 
 <br>
 
