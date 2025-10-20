@@ -25,6 +25,7 @@
       <p align="center"><strong>
         Para contribuir com este projeto, você precisará:
       </strong></p>
+      <br>
       <div style="display: flex; justify-content: center;">
         <ul style="text-align: left; display: inline-block;">
           <strong>
@@ -34,6 +35,7 @@
             <li>Para contribuições de tradução: fluência no idioma de destino</li>
             <li>Padronização de mensagens de commit seguindo<br><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a>: <code>feat</code>, <code>fix</code>, <code>add</code>, <code>trans</code>, etc.</li>
           </strong>
+          <br>
         </ul>
       </div>
     </td>
@@ -50,6 +52,19 @@ Antes de continuar, certifique-se de que o bug que você encontrou ainda não fo
 > [!TIP]\
 > Evite abrir issues pedindo para ser ativamente "atribuído" a uma parte específica do código. Apenas relate o bug.
 
+## Deseja que uma nova funcionalidade seja adicionada?
+
+Para sugerir ou implementar uma nova funcionalidade:
+
+1. **Proponha a ideia**
+   - Abra uma nova [Issue](https://github.com/juletopi/PontuaDev_Project/issues)
+   - Descreva o que a funcionalidade deve fazer
+   - Se possível, inclua casos de uso ou exemplos de implementação
+
+2. **Implementação (opcional)**
+   - Após feedback positivo na issue, você mesmo pode implementar a funcionalidade
+   - Siga o mesmo fluxo descrito na seção [Deseja contribuir com código?](#deseja-contribuir-com-código)
+  
 ## Deseja contribuir com a documentação?
 
 Caso tenha achado erros de digitação/formatação ou deseja melhorar a documentação:
@@ -86,19 +101,6 @@ Para adicionar uma nova tradução ao projeto:
    - Commit e push: `git commit -m "Trans adicionada tradução para [IDIOMA]" && git push origin traducao-SEU-NOME`
    - Abra um Pull Request da sua branch com a branch `master` do repositório original
    - Aguarde a revisão para aprovação das suas mudanças.
-
-## Deseja que uma nova funcionalidade seja adicionada?
-
-Para sugerir ou implementar uma nova funcionalidade:
-
-1. **Proponha a ideia**
-   - Abra uma nova [issue](https://github.com/juletopi/PontuaDev_Project/issues)
-   - Descreva o que a funcionalidade deve fazer
-   - Se possível, inclua casos de uso ou exemplos de implementação
-
-2. **Implementação (opcional)**
-   - Após feedback positivo na issue, você mesmo pode implementar a funcionalidade
-   - Siga o mesmo fluxo descrito na seção **Deseja contribuir com código?**
 
 ## Deseja contribuir com código?
 
