@@ -12,6 +12,8 @@
   
 </div>
 
+<br>
+
 <table align="center">
   <tr>
     <td>
@@ -52,6 +54,8 @@ Antes de continuar, certifique-se de que o bug que você encontrou ainda não fo
 > [!TIP]\
 > Evite abrir issues pedindo para ser ativamente "atribuído" a uma parte específica do código. Apenas relate o bug.
 
+<br>
+
 ## Deseja que uma nova funcionalidade seja adicionada?
 
 Para sugerir ou implementar uma nova funcionalidade:
@@ -64,7 +68,9 @@ Para sugerir ou implementar uma nova funcionalidade:
 2. **Implementação (opcional)**
    - Após feedback positivo na issue, você mesmo pode implementar a funcionalidade
    - Siga o mesmo fluxo descrito na seção [Deseja contribuir com código?](#deseja-contribuir-com-código)
-  
+
+<br>
+
 ## Deseja contribuir com a documentação?
 
 Caso tenha achado erros de digitação/formatação ou deseja melhorar a documentação:
@@ -81,6 +87,8 @@ Caso tenha achado erros de digitação/formatação ou deseja melhorar a documen
    - Commit e push: `git commit -m "Docs corrigido links externos" && git push origin doc-SEU-NOME`
    - Abra um Pull Request da sua branch com a branch `master` do repositório original
    - Aguarde a revisão para aprovação das suas mudanças.
+
+<br>
 
 ## Deseja traduzir a documentação?
 
@@ -101,6 +109,8 @@ Para adicionar uma nova tradução ao projeto:
    - Commit e push: `git commit -m "Trans adicionada tradução para [IDIOMA]" && git push origin traducao-SEU-NOME`
    - Abra um Pull Request da sua branch com a branch `master` do repositório original
    - Aguarde a revisão para aprovação das suas mudanças.
+
+<br>
 
 ## Deseja contribuir com código?
 
@@ -133,6 +143,8 @@ Seja corrigindo um bug ou criando uma nova feature, para contribuir com código 
 > git remote add upstream https://github.com/juletopi/PontuaDev_Project.git
 > git fetch upstream && git rebase upstream/master
 > ```
+
+<br>
 
 ## Tem alguma pergunta que deseja fazer?
 
