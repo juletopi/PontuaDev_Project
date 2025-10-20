@@ -15,7 +15,13 @@
 <table align="center">
   <tr>
     <td>
-      <h2 align="center">Antes de continuar...</h2>
+      <h3 align="center">Antes de continuar...</h3>
+      <p align="center">
+        <a href="">
+          <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnlveWlha3pxNnV0MThuMTNiYmFldnAwMDQ4ancyeGMzMWR4NmlzYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Qxk537vQtg5QPhSVW6/giphy.gif" alt="Important-gif" width="230px" title="Atenção aos requisitos!">
+        </a>
+      </p>
+      <br>
       <p align="center"><strong>
         Para contribuir com este projeto, você precisará:
       </strong></p>
@@ -26,15 +32,10 @@
             <li>Conta no GitHub</li>
             <li>Para contribuições de código: ambiente PHP/Laravel configurado</li>
             <li>Para contribuições de tradução: fluência no idioma de destino</li>
-            <li>Padronização de mensagens de commit seguindo <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a>: <code>feat</code>, <code>fix</code>, <code>add</code>, <code>trans</code>, etc.</li>
+            <li>Padronização de mensagens de commit seguindo<br><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a>: <code>feat</code>, <code>fix</code>, <code>add</code>, <code>trans</code>, etc.</li>
           </strong>
         </ul>
       </div>
-      <p align="center">
-        <a href="">
-          <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnlveWlha3pxNnV0MThuMTNiYmFldnAwMDQ4ancyeGMzMWR4NmlzYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Qxk537vQtg5QPhSVW6/giphy.gif" alt="Important-gif" width="230px" title="Atenção aos requisitos!">
-        </a>
-      </p>
     </td>
   </tr>
 </table>
