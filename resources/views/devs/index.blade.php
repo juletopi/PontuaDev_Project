@@ -46,7 +46,7 @@
                                 <img src="{{ $avatar }}"
                                      alt="avatarDev"
                                      class="rounded-circle mr-4"
-                                     style="width:120px; height:120px; border: 6px solid {{ $borda }}; background: #f8f9fa; object-fit:cover;">
+                                     style="width:120px; height:120px; border: 7.5px solid {{ $borda }}; background: #f8f9fa; object-fit:cover; margin-left:5px;">
                             @else
                                 <span class="rounded-circle mr-4 d-flex align-items-center justify-content-center" style="width:120px; height:120px; background: #f8f9fa; font-size:4rem; color:#bbb;">
                                     <i class="bi bi-person-circle" style="font-size:7.4rem;"></i>
@@ -67,10 +67,12 @@
                             </div>
                             <div class="text-muted">{{ $dev->email }}</div>
                         </div>
-                        <button class="btn btn-link ml-auto toggle-chevron" type="button" 
-                            data-toggle="collapse" data-target="#devCollapse{{ $dev->id }}" 
-                            aria-expanded="false" aria-controls="devCollapse{{ $dev->id }}">
-                            <i class="bi bi-chevron-up transition-chevron" id="chevron-{{ $dev->id }}"></i>
+                        <button class="btn btn-link ml-auto toggle-chevron"
+                            type="button"
+                            data-toggle="collapse" data-target="#devCollapse{{ $dev->id }}"
+                            aria-expanded="false" aria-controls="devCollapse{{ $dev->id }}"
+                            style="height:140%; align-self:stretch; padding:0 20px; margin-right:8px;">
+                            <i class="bi bi-chevron-up transition-chevron" id="chevron-{{ $dev->id }}" style="pointer-events:none;"></i>
                         </button>
                     </div>
                     

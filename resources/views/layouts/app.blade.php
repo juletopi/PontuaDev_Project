@@ -6,6 +6,81 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
+        /* Resets */
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        a,
+        a:hover,
+        a:visited,
+        a:active,
+        a:focus {
+            text-decoration: none;
+        }
+        a:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(25,121,206,0.12);
+            border-radius: 3px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .btn-primary,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active,
+        .bg-primary,
+        .alert-primary,
+        .badge-primary,
+        .border-primary {
+            background-color: #3b85d4 !important;
+            color: #fff !important;
+            border-color: #3b85d4 !important;
+        }
+        .btn-primary:hover,
+        .btn-primary:focus:hover,
+        .btn-primary:active:hover {
+            background-color: #1c6eb6 !important;
+            border-color: #1c6eb6 !important;
+        }
+        .btn-outline-primary {
+            color: #3b85d4 !important;
+            border-color: #3b85d4 !important;
+        }
+        .btn-outline-primary:hover,
+        .btn-outline-primary:focus {
+            color: #fff !important;
+        }
+        .btn-edit.btn-outline-primary:hover,
+        .btn-edit.btn-outline-primary:focus {
+            color: #1979ce !important;
+        }
+        .btn-edit.btn-outline-primary:hover .bi,
+        .btn-edit.btn-outline-primary:focus .bi {
+            color: #1979ce !important;
+        }
+        a.text-primary,
+        .text-primary {
+            color: #3b85d4 !important;
+        }
+        a.text-primary:hover,
+        .text-primary:hover {
+            color: #1c6eb6 !important;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: #3b85d4 !important;
+            border-color: #3b85d4 !important;
+            color: #fff !important;
+        }
+        .page-link:hover {
+            color: #1c6eb6 !important;
+        }
+        .badge-primary {
+            background-color: #3b85d4 !important;
+            color: #fff !important;
+        }
         /* Lista devs/tarefas */
         .btn-adicionar-dev {
             width: 100%;
@@ -16,6 +91,10 @@
             border-radius: 8px;
             font-size: 1.5rem;
             display: block;
+        }
+        .btn-adicionar-dev:hover,
+        .btn-adicionar-dev:focus {
+            background-color: #3b85d4 !important;
         }
         .card-dev {
             width: 100%;
@@ -379,7 +458,7 @@
             padding-left: 0.7rem;
             padding-right: 1rem;
         }
-        /* Botão Voltar ao Topo */
+        /* Botão Voltar ao topo */
         #botao-topo {
             position: fixed;
             bottom: 30px;
@@ -407,6 +486,11 @@
             background-color: #1466ad;
             opacity: 1;
         }
+        /* Footer */
+        .btn-repo { color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem; transition: color .12s ease; }
+        .btn-repo .repo-arrow { display: inline-block; transition: transform .18s cubic-bezier(.2,.9,.3,1); }
+        .btn-repo:hover, .btn-repo:hover .repo-arrow, .btn-repo:focus .repo-arrow { transform: translateX(6px); color: #3b85d4; }
+        .btn-repo:focus { outline: none; box-shadow: 0 0 0 3px rgba(59,132,212,0.12); border-radius: 6px; }
     </style>
 </head>
 <body>
@@ -456,7 +540,7 @@
     @yield('scripts')
     
     <!-- Footer -->
-    <footer style="background:#222; color:#fff; margin-top:6rem; padding:2.2rem 0 1.2rem 0;">
+    <footer style="background:#222; color:#fff; margin-top:6rem; padding:2.2rem 0 0 0; margin-bottom:0;">
         <div style="max-width:1100px; margin:0 auto; padding:0 2rem;">
             <div style="display:flex; align-items:flex-start; gap:3.5rem; justify-content:center; text-align:left;">
                 <div style="flex:0 0 220px; display:flex; flex-direction:column; align-items:flex-start; justify-content:center;">
@@ -471,20 +555,30 @@
                         <a href="https://github.com/juletopi" target="_blank" style="color:#bbb; text-decoration:none; font-size:1rem;">GitHub</a>
                     </div>
                     <div style="display:flex; flex-direction:column; gap:0.3rem; align-items:flex-start;">
-                        <div style="font-size:1.08rem; font-weight:600; color:#fff;">Contato</div>
-                        <a href="mailto:juliocezarpvh@hotmail.com" style="color:#bbb; text-decoration:none; font-size:1rem;">E-mail</a>
-                    </div>
-                    <div style="display:flex; flex-direction:column; gap:0.3rem; align-items:flex-start;">
                         <div style="font-size:1.08rem; font-weight:600; color:#fff;">Redes</div>
                         <a href="https://www.facebook.com/juhletopi/" target="_blank" style="color:#bbb; text-decoration:none; font-size:1rem;">Facebook</a>
                         <a href="https://www.instagram.com/juletopi/" target="_blank" style="color:#bbb; text-decoration:none; font-size:1rem;">Instagram</a>
                         <a href="https://www.linkedin.com/in/julio-cezar-pereira-camargo/" target="_blank" style="color:#bbb; text-decoration:none; font-size:1rem;">LinkedIn</a>
                     </div>
+                    <div style="display:flex; flex-direction:column; gap:0.3rem; align-items:flex-start;">
+                        <div style="font-size:1.08rem; font-weight:600; color:#fff;">Contato</div>
+                        <a href="mailto:juliocezarpvh@hotmail.com" style="color:#bbb; text-decoration:none; font-size:1rem;">E-mail</a>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:0.3rem; align-items:flex-start;">
+                        <div style="font-size:1.08rem; color:#bbb;">Quer accesar o código-fonte do projeto?<br></div>
+                        <a class="btn-repo" href="https://github.com/juletopi/PontuaDev_Project" style="font-size:1rem; background:transparent;" target="_blank" rel="noopener">
+                            <strong>Ver repositório</strong>
+                            <i class="bi bi-arrow-right repo-arrow" aria-hidden="true" style="font-size:1rem;"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <hr style="border-top:1px solid #444; margin:2.2rem 0 1.2rem 0;">
-            <div style="display:flex; flex-direction:column; align-items:center; gap:0.7rem;">
-                <p style="font-size:0.98rem; margin-top:0.7rem; color:#bbb;">Alguns direitos reservados &copy; <span id="current-year">{{ date('Y') }}</span> ┃ Feito com <i class="bi bi-suit-heart-fill" style="color:#bbb; font-size:1rem; vertical-align:middle;"></i> e <i class="bi bi-cup-hot-fill" style="color:#bbb; font-size:1rem;"></i> por Juletopi.</p>
+        </div>
+        <div class="footer-bottom" style="background-color:#181818; padding:1.5rem 0; margin-top:2rem;">
+            <div style="max-width:1100px; margin:0 auto; padding:0 2rem;">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+                    <p style="font-size:0.98rem; margin:0; padding:0; color:#bbb;">Alguns direitos reservados &copy; <span id="current-year">{{ date('Y') }}</span> &#xa0;┃&#xa0; Feito com <i class="bi bi-suit-heart-fill" style="font-size:0.85rem;" aria-hidden="true"></i> e <i class="bi bi-cup-hot-fill" style="font-size:0.85rem;" aria-hidden="true"></i> por Juletopi</p>
+                </div>
             </div>
         </div>
     </footer>

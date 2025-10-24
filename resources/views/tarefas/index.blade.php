@@ -147,7 +147,7 @@
         <hr style="margin-top:2rem;">
 
         <!-- Tabela -->
-        <div id="tarefas-tabela" style="margin-top:1rem;">
+        <div id="tarefas-tabela" class="table-responsive" style="margin-top:1rem;">
             <table class="table table-borderless table-zebra">
                 <thead>
                     <tr>

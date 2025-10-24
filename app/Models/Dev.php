@@ -27,14 +27,14 @@ class Dev extends Model
     ];
 
     public static $faixaCores = [
-        'branca' => '#ddddddff',
-        'amarela' => '#ebdb4dff',
-        'vermelha' => '#e53935',
-        'laranja' => '#ee7b1dff',
-        'verde' => '#43a047ff',
-        'roxa' => '#873cb9ff',
-        'marrom' => '#835323ff',
-        'preta' => '#1a1a1aff',
+        'branca' => '#dddddd',
+        'amarela' => '#dbcb53',
+        'vermelha' => '#c0463f',
+        'laranja' => '#e07c3e',
+        'verde' => '#539b51',
+        'roxa' => '#7a5a8f',
+        'marrom' => '#7a5a48',
+        'preta' => '#37393d',
     ];
 
     public function getTempoExperienciaAttribute()
