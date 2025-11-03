@@ -88,25 +88,21 @@
                         <!-- Modal excluir dev -->
                         <div class="modal fade" id="modalExcluirDev{{ $dev->id }}" tabindex="-1" role="dialog" aria-labelledby="modalExcluirDevLabel{{ $dev->id }}" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="modalExcluirDevLabel{{ $dev->id }}">
-                                            <i class="bi bi-trash"></i> Excluir dev
-                                        </h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+                                <div class="modal-content modal-delete">
+                                    <div class="modal-icon">
+                                        <i class="bi bi-trash" aria-hidden="true"></i>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Deseja excluir o dev?<br><br>Essa ação é irreversível e excluirá todas as informações das tarefas referentes ao dev.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                        <form action="{{ route('devs.destroy', $dev->id) }}" method="POST" style="display:inline;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Confirmar</button>
-                                        </form>
+                                        <h5 class="modal-title-delete">Excluir dev</h5>
+                                        <p class="modal-desc">Essa ação é irreversível e excluirá todas as informações das tarefas referentes ao dev.</p>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn-cancel" data-dismiss="modal">Cancelar</button>
+                                            <form action="{{ route('devs.destroy', $dev->id) }}" method="POST" style="display:inline-block;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn-confirm">Sim, excluir dev</button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -164,7 +160,7 @@
 
                                 <!-- Tarefas tab -->
                                 <div class="tab-pane fade" id="tarefas{{ $dev->id }}" role="tabpanel" aria-labelledby="tarefas-tab-{{ $dev->id }}">
-                                    <div id="tarefas-list-{{ $dev->id }}">
+                                    <div class="table-responsive" id="tarefas-list-{{ $dev->id }}">
                                         <table class="table table-borderless table-zebra">
                                             <thead>
                                                 <tr>
@@ -194,7 +190,7 @@
                                                                 {{ $statusMap[$tarefa->pontuacao] ?? '-' }}
                                                             </span>
                                                         </td>
-                                                        <td>{{ $tarefa->pontuacao }}</td>
+                                                        <td style="text-align:center;">{{ $tarefa->pontuacao }}</td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -213,7 +209,7 @@
                                                     <a class="page-link" href="#" onclick="carregarTarefas({{ $dev->id }}, {{ $dev->tarefas_paginadas->currentPage() + 1 }}); return false;">Próximo</a>
                                                 </li>
                                             </ul>
-                                            <a href="{{ route('tarefas.index', $dev->id) }}" class="btn btn-outline-primary btn-sm d-flex align-items-center" style="height:35px; font-size:1rem; gap:0.2rem; margin-left:0.5rem;">
+                                            <a href="{{ route('tarefas.index', $dev->id) }}" class="ver-mais btn btn-outline-primary btn-sm d-flex align-items-center" style="height:35px; font-size:1rem; gap:0.2rem; margin-left:0.5rem;">
                                                 <i class="bi bi-search" style="font-size:1.1rem;"></i> Ver mais
                                             </a>
                                         </nav>

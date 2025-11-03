@@ -180,7 +180,7 @@
                                         {{ $tarefa->dev->nome }}
                                     </div>
                                 @else
-                                    -
+                                    -----
                                 @endif
                             </td>
                             <td>
@@ -192,10 +192,10 @@
                                     @elseif($tarefa->pontuacao == 8) badge-status-extra
                                     @else badge-secondary @endif"
                                     style="font-size:1rem;">
-                                    {{ $statusMap[$tarefa->pontuacao] ?? '-' }}
+                                    {{ $statusMap[$tarefa->pontuacao] ?? '--' }}
                                 </span>
                             </td>
-                            <td>{{ $tarefa->pontuacao }}</td>
+                            <td style="text-align:center;">{{ $tarefa->pontuacao }}</td>
                             <td class="dev-actions d-flex align-items-center" style="gap:0.5rem;">
                                 <button type="button" class="btn-view btn-sm" data-tarefa-id="{{ $tarefa->id }}"><i class="bi bi-eye"></i></button>
                                 <a href="{{ route('tarefas.edit', $tarefa->id) }}" class="btn-edit btn-sm"><i class="bi bi-pencil"></i></a>
@@ -322,27 +322,23 @@
 
     <!-- Modal excluir tarefa -->
     @foreach($tarefas as $tarefa)
-        <div class="modal fade" id="deleteModal{{ $tarefa->id }}" tabindex="-1" role="dialog">
+        <div class="modal fade" id="deleteModal{{ $tarefa->id }}" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">
-                            <i class="bi bi-trash"></i> Excluir tarefa
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                <div class="modal-content modal-delete">
+                    <div class="modal-icon">
+                        <i class="bi bi-trash" aria-hidden="true"></i>
                     </div>
                     <div class="modal-body">
-                        Deseja excluir essa tarefa?<br><br>Essa ação é irreversível e irá afetar a pontuação do dev atribuído a ela.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <form action="{{ route('tarefas.destroy', $tarefa->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Confirmar</button>
-                        </form>
+                        <h5 class="modal-title-delete">Excluir tarefa</h5>
+                        <p class="modal-desc">Essa ação é irreversível e irá afetar a pontuação do dev atribuído a ela.</p>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-cancel" data-dismiss="modal">Cancelar</button>
+                            <form action="{{ route('tarefas.destroy', $tarefa->id) }}" method="POST" style="display:inline-block;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn-confirm">Sim, excluir tarefa</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
