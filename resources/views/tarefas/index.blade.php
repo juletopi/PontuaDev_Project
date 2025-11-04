@@ -185,17 +185,18 @@
                             </td>
                             <td>
                                 <span class="badge
-                                    @if($tarefa->pontuacao == 0) badge-status-zerou
+                                    @if(is_null($tarefa->pontuacao)) badge-status-doing
+                                    @elseif($tarefa->pontuacao == 0) badge-status-zerou
                                     @elseif($tarefa->pontuacao == 2) badge-status-saiualgo
                                     @elseif($tarefa->pontuacao == 3) badge-status-quase
                                     @elseif($tarefa->pontuacao == 5) badge-status-deubom
                                     @elseif($tarefa->pontuacao == 8) badge-status-extra
                                     @else badge-secondary @endif"
                                     style="font-size:1rem;">
-                                    {{ $statusMap[$tarefa->pontuacao] ?? '--' }}
+                                    {{ is_null($tarefa->pontuacao) ? 'DOING' : ($statusMap[$tarefa->pontuacao] ?? '--') }}
                                 </span>
                             </td>
-                            <td style="text-align:center;">{{ $tarefa->pontuacao }}</td>
+                            <td style="text-align:center;">{{ $tarefa->pontuacao ?? '--' }}</td>
                             <td class="dev-actions d-flex align-items-center" style="gap:0.5rem;">
                                 <button type="button" class="btn-view btn-sm" data-tarefa-id="{{ $tarefa->id }}"><i class="bi bi-eye"></i></button>
                                 <a href="{{ route('tarefas.edit', $tarefa->id) }}" class="btn-edit btn-sm"><i class="bi bi-pencil"></i></a>
@@ -302,7 +303,12 @@
                                 $totalTarefas = $devTarefas->count();
                             @endphp
                             @foreach($statusContagem as $valor => $label)
-                                @php $qtd = $devTarefas->where('pontuacao', $valor)->count(); @endphp
+                                @php
+                                    // Contar apenas tarefas avaliadas com pontuação exatamente igual (strict) ao valor
+                                    $qtd = $devTarefas->filter(function($t) use ($valor) {
+                                        return isset($t->pontuacao) && (int) $t->pontuacao === (int) $valor;
+                                    })->count();
+                                @endphp
                                 <span style="display:flex; align-items:center; font-size:1.13rem; gap:0.45rem;">
                                     <span style="font-size:1.05rem;">{{ $qtd }}</span>
                                     <span style="width:13px; height:13px; border-radius:50%; background:{{ $statusCores[$valor] }}; display:inline-block;"></span>
@@ -402,14 +408,15 @@
                                     <label style="font-weight:700; font-size:1.13rem;">Pontuação</label>
                                     <div class="mt-2">
                                         <span class="badge
-                                            @if($tarefa->pontuacao == 0) badge-status-zerou
+                                            @if(is_null($tarefa->pontuacao)) badge-status-doing
+                                            @elseif($tarefa->pontuacao == 0) badge-status-zerou
                                             @elseif($tarefa->pontuacao == 2) badge-status-saiualgo
                                             @elseif($tarefa->pontuacao == 3) badge-status-quase
                                             @elseif($tarefa->pontuacao == 5) badge-status-deubom
                                             @elseif($tarefa->pontuacao == 8) badge-status-extra
                                             @else badge-secondary @endif"
                                             style="font-size:1rem; padding:0.5rem 1rem;">
-                                            {{ $statusMap[$tarefa->pontuacao]}}
+                                            {{ is_null($tarefa->pontuacao) ? 'DOING' : ($statusMap[$tarefa->pontuacao] ?? '--') }}
                                         </span>
                                     </div>
                                 </div>

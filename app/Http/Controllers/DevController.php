@@ -18,9 +18,10 @@ class DevController extends Controller
         // Calc média geral e porcentagem de aproveitamento
         foreach ($devs as $dev) {
             $tarefas = $dev->tarefas ?? collect();
-            $dev->media_geral = $tarefas->avg('pontuacao') ?? 0;
-            $dev->total_pontos = $tarefas->sum('pontuacao') ?? 0;
-            $numTarefas = $tarefas->count();
+            $avaliadas = $tarefas->filter(function($t) { return isset($t->pontuacao); });
+            $dev->media_geral = $avaliadas->count() ? $avaliadas->avg('pontuacao') : 0;
+            $dev->total_pontos = $avaliadas->sum('pontuacao') ?? 0;
+            $numTarefas = $avaliadas->count();
             $dev->porcentagem_aproveitamento = $numTarefas > 0 ? round(($dev->total_pontos / ($numTarefas * 5)) * 100) : 0;
             $dev->tarefas_paginadas = $dev->tarefas()->orderByDesc('numero_semana')->paginate(5, ['*'], 'dev_'.$dev->id.'_page');
         }

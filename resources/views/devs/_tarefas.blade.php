@@ -14,17 +14,18 @@
                 <td>{{ $tarefa->nome_tarefa }}</td>
                 <td>
                     <span class="badge
-                        @if($tarefa->pontuacao == 0) badge-status-zerou
+                        @if(is_null($tarefa->pontuacao)) badge-status-doing
+                        @elseif($tarefa->pontuacao == 0) badge-status-zerou
                         @elseif($tarefa->pontuacao == 2) badge-status-saiualgo
                         @elseif($tarefa->pontuacao == 3) badge-status-quase
                         @elseif($tarefa->pontuacao == 5) badge-status-deubom
                         @elseif($tarefa->pontuacao == 8) badge-status-extra
                         @else badge-secondary @endif"
                         style="font-size:1rem;">
-                        {{ $statusMap[$tarefa->pontuacao] ?? '-' }}
+                        {{ is_null($tarefa->pontuacao) ? 'DOING' : ($statusMap[$tarefa->pontuacao] ?? '-') }}
                     </span>
                 </td>
-                <td>{{ $tarefa->pontuacao }}</td>
+                <td>{{ $tarefa->pontuacao ?? '--' }}</td>
             </tr>
         @endforeach
     </tbody>

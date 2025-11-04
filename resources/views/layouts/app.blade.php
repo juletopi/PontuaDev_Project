@@ -543,6 +543,11 @@
             color: #5a32c2;
             font-weight: 600;
         }
+        .badge-status-doing {
+            background: #f2f2f2;
+            color: #6c757d;
+            font-weight: 600;
+        }
         /* Modal visualizar */
         .modal-title {
             font-size: 1.45rem;

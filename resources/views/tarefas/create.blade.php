@@ -62,15 +62,16 @@
                     <div class="form-row align-items-end">
                         <div class="form-group col-md-3 add-edit-lbl d-flex align-items-end">
                             <div style="width:100%;">
-                                <label for="pontuacao">Pontuação <span class="text-danger">*</span></label>
+                                <label for="pontuacao">Pontuação</label>
                                 <div class="input-group">
-                                    <select class="form-control" id="pontuacao" name="pontuacao" required>
-                                        <option value="">Selecione</option>
-                                        <option value="0">Zerou</option>
-                                        <option value="2">Saiu algo</option>
-                                        <option value="3">Quase</option>
-                                        <option value="5">Deu bom</option>
-                                        <option value="8">Extra</option>
+                                    @php $selectedPontuacao = old('pontuacao', ''); @endphp
+                                    <select class="form-control" id="pontuacao" name="pontuacao">
+                                        <option value="" {{ $selectedPontuacao === '' ? 'selected' : '' }}>DOING</option>
+                                        <option value="0" {{ (string)$selectedPontuacao === '0' ? 'selected' : '' }}>Zerou</option>
+                                        <option value="2" {{ (string)$selectedPontuacao === '2' ? 'selected' : '' }}>Saiu algo</option>
+                                        <option value="3" {{ (string)$selectedPontuacao === '3' ? 'selected' : '' }}>Quase</option>
+                                        <option value="5" {{ (string)$selectedPontuacao === '5' ? 'selected' : '' }}>Deu bom</option>
+                                        <option value="8" {{ (string)$selectedPontuacao === '8' ? 'selected' : '' }}>Extra</option>
                                     </select>
                                     <div class="input-group-append">
                                         <span id="pontuacao-pts" class="input-group-text" style="border:1.5px solid #ced4da; background:#fff; font-weight:500;">-- pts</span>
@@ -111,11 +112,13 @@
         }
     });
     // Preview pontuação
-    $('#pontuacao').on('change', function() {
-        var val = $(this).val();
+    function atualizarPreviewPontuacao() {
+        var val = $('#pontuacao').val();
         var txt = '-- pts';
-        if(val) txt = val + ' pts';
+        if (val !== '') txt = val + ' pts';
         $('#pontuacao-pts').text(txt);
-    });
+    }
+    $('#pontuacao').on('change', atualizarPreviewPontuacao);
+    atualizarPreviewPontuacao();
 </script>
 @endsection

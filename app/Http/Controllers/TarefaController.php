@@ -87,12 +87,13 @@ public function index(Request $request)
             return $dev->faixa ? $ordemFaixas[$dev->faixa] : -1;
         });
 
-        // Calcular métricas por dev
+        // Calcular métricas por dev (ignorar tarefas DOING)
         foreach ($devsFiltrados as $dev) {
             $devTarefas = $tarefas->where('dev_id', $dev->id);
-            $dev->media = $devTarefas->avg('pontuacao') ?? 0;
-            $dev->total = $devTarefas->sum('pontuacao') ?? 0;
-            $numTarefas = $devTarefas->count();
+            $avaliadas = $devTarefas->filter(function($t) { return isset($t->pontuacao); });
+            $dev->media = $avaliadas->count() ? $avaliadas->avg('pontuacao') : 0;
+            $dev->total = $avaliadas->sum('pontuacao') ?? 0;
+            $numTarefas = $avaliadas->count();
             $dev->porcentagem = $numTarefas > 0 ? round(($dev->total / ($numTarefas * 5)) * 100) : 0;
         }
 
@@ -119,10 +120,14 @@ public function index(Request $request)
             'numero_semana' => 'required|integer',
             'nome_tarefa' => 'required|string|max:255',
             'descricao' => 'nullable|string',
-            'pontuacao' => 'required|in:0,2,3,5,8',
+            'pontuacao' => 'nullable|in:0,2,3,5,8',
             'data_inicio' => 'required|date',
             'data_fim' => 'nullable|date|after_or_equal:data_inicio',
         ]);
+
+        if (!$request->filled('pontuacao')) {
+            $validated['pontuacao'] = null;
+        }
 
         $tarefa = Tarefa::create($validated);
 
@@ -158,10 +163,14 @@ public function index(Request $request)
             'numero_semana' => 'required|integer',
             'nome_tarefa' => 'required|string|max:255',
             'descricao' => 'nullable|string',
-            'pontuacao' => 'required|in:0,2,3,5,8',
+            'pontuacao' => 'nullable|in:0,2,3,5,8',
             'data_inicio' => 'required|date',
             'data_fim' => 'nullable|date|after_or_equal:data_inicio',
         ]);
+
+        if (!$request->filled('pontuacao')) {
+            $validated['pontuacao'] = null;
+        }
 
         $tarefa->update($validated);
 
@@ -250,9 +259,10 @@ public function index(Request $request)
         
         foreach ($devsFiltrados as $dev) {
             $devTarefas = $tarefas->where('dev_id', $dev->id);
-            $dev->media = $devTarefas->avg('pontuacao') ?? 0;
-            $dev->total = $devTarefas->sum('pontuacao') ?? 0;
-            $numTarefas = $devTarefas->count();
+            $avaliadas = $devTarefas->filter(function($t) { return isset($t->pontuacao); });
+            $dev->media = $avaliadas->count() ? $avaliadas->avg('pontuacao') : 0;
+            $dev->total = $avaliadas->sum('pontuacao') ?? 0;
+            $numTarefas = $avaliadas->count();
             $dev->porcentagem = $numTarefas > 0 ? round(($dev->total / ($numTarefas * 5)) * 100) : 0;
         }
         
