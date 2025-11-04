@@ -23,7 +23,7 @@
     <!-- Btn add tarefa -->
     <div class="row justify-content-center mb-4">
         <div class="col-12 d-flex justify-content-center">
-            <a href="{{ route('tarefas.create') }}" class="btn btn-outline-primary mb-3 btn-adicionar-dev">
+            <a href="{{ route('tarefas.create') }}" class="btn btn-outline-primary mb-3 btn-adicionar-tarefa">
                 <i class="bi bi-plus-circle"></i> Adicionar tarefa
             </a>
         </div>

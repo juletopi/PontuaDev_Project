@@ -42,8 +42,8 @@
         .btn-primary:hover,
         .btn-primary:focus:hover,
         .btn-primary:active:hover {
-            background-color: #1c6eb6 !important;
-            border-color: #1c6eb6 !important;
+            background-color: #1979ce !important;
+            border-color: #1979ce !important;
         }
         .btn-outline-primary {
             color: #3b85d4 !important;
@@ -59,7 +59,7 @@
         }
         a.text-primary:hover,
         .text-primary:hover {
-            color: #1c6eb6 !important;
+            color: #1979ce !important;
         }
         .pagination .page-item.active .page-link {
             background-color: #3b85d4 !important;
@@ -67,7 +67,7 @@
             color: #fff !important;
         }
         .page-link:hover {
-            color: #1c6eb6 !important;
+            color: #1979ce !important;
         }
         .badge-primary {
             background-color: #3b85d4 !important;
@@ -75,6 +75,9 @@
         }
         /* Lista devs/tarefas */
         .btn-adicionar-dev {
+            background-color: #3b85d4 !important;
+            color: #fff !important;
+            border: 1px solid #3b85d4 !important;
             width: 100%;
             max-width: 1100px;
             margin-top: 1rem;
@@ -86,7 +89,25 @@
         }
         .btn-adicionar-dev:hover,
         .btn-adicionar-dev:focus {
-            background-color: #1979ce !important;
+            filter: brightness(.95) !important;
+        }
+        .btn-adicionar-tarefa {
+            background-color: transparent !important;
+            color: #1c6eb6 !important;
+            border: 1px solid #3b85d4 !important;
+            width: 100%;
+            max-width: 1100px;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem 3rem;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            display: block;
+        }
+        .btn-adicionar-tarefa:hover,
+        .btn-adicionar-tarefa:focus {
+            background-color: #3b85d4 !important;
+            color: #fff !important;
         }
         .card-dev {
             width: 100%;
