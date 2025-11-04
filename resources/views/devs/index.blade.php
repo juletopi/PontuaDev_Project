@@ -112,18 +112,20 @@
                     <!-- Dev collapse -->
                     <div class="collapse" id="devCollapse{{ $dev->id }}">
                         <div class="card-body border-top">
-                            <ul class="nav nav-tabs" id="devTab{{ $dev->id }}" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="pontuacao-tab-{{ $dev->id }}" data-toggle="tab" href="#pontuacao{{ $dev->id }}" role="tab" aria-controls="pontuacao{{ $dev->id }}" aria-selected="true">
-                                        Pontuação
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tarefas-tab-{{ $dev->id }}" data-toggle="tab" href="#tarefas{{ $dev->id }}" role="tab" aria-controls="tarefas{{ $dev->id }}" aria-selected="false">
-                                        Tarefas
-                                    </a>
-                                </li>
-                            </ul>
+                            <div class="card-tabs-wrapper">
+                                <ul class="nav nav-tabs card-tabs" id="devTab{{ $dev->id }}" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="pontuacao-tab-{{ $dev->id }}" data-toggle="tab" href="#pontuacao{{ $dev->id }}" role="tab" aria-controls="pontuacao{{ $dev->id }}" aria-selected="true">
+                                            Pontuação
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="tarefas-tab-{{ $dev->id }}" data-toggle="tab" href="#tarefas{{ $dev->id }}" role="tab" aria-controls="tarefas{{ $dev->id }}" aria-selected="false">
+                                            Tarefas
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                             <!-- Pontuação tab -->
                             <div class="tab-content pt-3" id="devTabContent{{ $dev->id }}">
                                 <div class="tab-pane fade show active" id="pontuacao{{ $dev->id }}" role="tabpanel" aria-labelledby="pontuacao-tab-{{ $dev->id }}">

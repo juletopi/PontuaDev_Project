@@ -51,9 +51,7 @@
         }
         .btn-outline-primary:hover,
         .btn-outline-primary:active {
-            background-color: #3b85d4 !important;
-            border-color: #3b85d4 !important;
-            color: #fff !important;
+            filter: brightness(0.95);
         }
         a.text-primary,
         .text-primary {
@@ -100,7 +98,7 @@
             gap: 1rem;
             margin-top: -1rem;
             margin-left: 10.2rem;
-            padding-bottom: 0.5rem;
+            padding-bottom: 1rem;
         }
         .dev-actions .btn-view {
             font-size: 1rem;
@@ -143,6 +141,10 @@
             margin-top: 0 !important;
             padding-bottom: 0.5rem;
             gap: 0.5rem;
+        }
+        .ver-mais:hover {
+            color: #fff !important;
+            background-color: #1979ce !important;
         }
         .dev-actions .btn-sm {
             min-width: 34px;
@@ -205,6 +207,44 @@
         .transition-chevron {
             transition: transform 0.3s cubic-bezier(.4,2,.6,1);
             display: inline-block;
+        }
+        /* Nav tabs */
+        .card-tabs-wrapper {
+            width: calc(100% + 2.5rem);
+            margin: -1.25rem -1.25rem 0 -1.25rem;
+            padding: 0.5rem 1.25rem 0 1.25rem;
+            margin-bottom: 0.6rem;
+            border-bottom: 1px solid #e6ecef;
+            background: #f3f6f8;
+        }
+        .card-tabs {
+            display: flex;
+            align-items: center;
+            border-bottom: none;
+        }
+        .card-tabs .nav-item {
+            margin-bottom: -3px;
+        }
+        .card-tabs .nav-link {
+            color: #6c757d;
+            background: transparent;
+            border: 1px solid #e6ecef;
+            font-weight: 600;
+            transition: all 0.15s ease;
+        }
+        .card-tabs .nav-link:hover {
+            background: rgba(0,0,0,0.03);
+            color: #24303a;
+        }
+        .card-tabs .nav-link.active {
+            color: #24303a;
+            background: #fff;
+            border: 1px solid #e6ecef;
+            border-top: 6px solid #3b85d4;
+            border-bottom: none;
+        }
+        .card-tabs .nav-link.active:focus {
+            box-shadow: none;
         }
         .pontuacao-list-devs .list-group-item {
             font-size: 1.25rem;
@@ -314,6 +354,17 @@
             font-size: 1.15rem;
             margin-top: 1rem;
             padding: 0.7rem 1.5rem;
+        }
+        .add-edit-actions .btn-cancel {
+            background: #dbdee0;
+            color: #444;
+            border: 1px solid #dbdee0;
+            padding: 0.55rem 1.1rem;
+            border-radius: 0.25rem;
+        }
+        .add-edit-actions .btn-cancel:hover,
+        .add-edit-actions .btn-cancel:active {
+            filter: brightness(0.95);
         }
         /* Filtros */
         .filtros-avancados-box {
@@ -534,12 +585,24 @@
             padding: 0.55rem 1.1rem;
             border-radius: 8px;
         }
+        .modal-content.modal-delete .btn-cancel:focus,
+        .modal-content.modal-delete .btn-cancel:focus-visible {
+            outline: none;
+            border: 1px solid #dbdee0;
+            box-shadow: 0 0 0 3px rgba(59,132,212,0.12);
+        }
         .modal-content.modal-delete .btn-confirm {
             background: #ec5c43;
             color: #fff;
             border: 1px solid #ec5c43;
             padding: 0.55rem 1.2rem;
             border-radius: 8px;
+        }
+        .modal-content.modal-delete .btn-confirm:focus,
+        .modal-content.modal-delete .btn-confirm:focus-visible {
+            outline: none;
+            border: 1px solid #f05743;
+            box-shadow: 0 0 0 4px rgba(236,92,67,0.14);
         }
         .modal-content.modal-delete .btn-cancel:hover,
         .modal-content.modal-delete .btn-confirm:hover {

@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     <div class="add-edit-actions mt-4">
-                        <a href="{{ route('tarefas.index') }}" class="btn btn-outline-secondary">Cancelar</a>
+                        <a href="{{ route('tarefas.index') }}" class="btn btn-cancel">Cancelar</a>
                         <button type="submit" class="btn btn-primary"><i class="bi bi-pencil"></i> Confirmar</button>
                     </div>
                 </form>
