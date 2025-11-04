@@ -146,9 +146,9 @@
                 <tr>
                     <td>[{{ $tarefa->numero_semana }}]</td>
                     <td>{{ $tarefa->nome_tarefa }}</td>
-                    <td>{{ $tarefa->dev ? $tarefa->dev->nome : '-' }}</td>
-                    <td style="min-width:90px;"><span class="badge {{ $badgeClass }}" style="font-family: Arial, sans-serif; font-size:13px; font-weight:600;">{{ $statusMap[$tarefa->pontuacao] ?? '-' }}</span></td>
-                    <td>{{ $tarefa->pontuacao }}</td>
+                    <td>{{ $tarefa->dev ? $tarefa->dev->nome : '-----' }}</td>
+                    <td style="min-width:90px;"><span class="badge {{ $badgeClass }}" style="font-family: Arial, sans-serif; font-size:13px; font-weight:600;">{{ $statusMap[$tarefa->pontuacao] ?? 'DOING' }}</span></td>
+                    <td style="text-align:center;">{{ $tarefa->pontuacao ?? '--' }}</td>
                     <td>
                         {{ $tarefa->data_inicio ? \Carbon\Carbon::parse($tarefa->data_inicio)->format('d/m/Y') : '--/--/----' }}
                         -
