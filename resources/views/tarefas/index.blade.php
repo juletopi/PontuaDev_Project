@@ -354,7 +354,7 @@
     <!-- Modal visualizar tarefa -->
     @foreach($tarefas as $tarefa)
         <div class="modal fade custom-modal-tarefa" id="viewModal{{ $tarefa->id }}" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:900px;">
+            <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:1000px;">
                 <div class="modal-content" style="border-radius:1.2rem;">
                     <div class="modal-header" style="border-bottom:1px solid #eee;">
                         <h5 class="modal-title" style="font-size:1.45rem; font-weight:600; margin-left:1.8rem; margin-top:0.3rem;">
@@ -364,12 +364,39 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body" style="padding:2.7rem 2.7rem 2.1rem 2.7rem;">
+                    <div class="modal-body" style="padding:2.7rem 2.7rem 2.1rem 2.7rem; max-height:80vh; overflow-y:auto;">
                         <div class="row">
                             <div class="col-md-7 pr-4">
-                                <label style="font-weight:700; font-size:1.13rem;">Descrição</label>
+                                <label style="font-weight:700; font-size:1.13rem;">Anotações</label>
                                 <div style="background:#f7f9fb; border-radius:0.7rem; min-height:140px; padding:1.3rem 1.3rem; font-size:1.13rem; color:#444; margin-top:0.5rem;">
-                                    {{ $tarefa->descricao ?? 'Nenhuma descrição' }}
+                                    {{ $tarefa->anotacao ?? 'Nenhuma anotação' }}
+                                </div>
+                                <!-- Itens -->
+                                <label style="font-weight:700; font-size:1.13rem; margin-top:1rem;">Itens</label>
+                                <div style="background:#fff; border-radius:0.7rem; padding:0.9rem 1rem; margin-top:0.5rem;">
+                                    @if(!empty($tarefa->itens) && is_array($tarefa->itens) && count($tarefa->itens) > 0)
+                                        <ul style="margin:0; padding-left:1.15rem; color:#444; font-size:1.04rem;">
+                                            @foreach($tarefa->itens as $it)
+                                                <li style="margin-bottom:0.35rem;">{{ $it }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @else
+                                        <div style="color:#888;">Sem items</div>
+                                    @endif
+                                </div>
+
+                                <!-- Extras -->
+                                <label style="font-weight:700; font-size:1.13rem; margin-top:1rem;">Extra</label>
+                                <div style="background:#fff; border-radius:0.7rem; padding:0.9rem 1rem; margin-top:0.5rem;">
+                                    @if(!empty($tarefa->extras) && is_array($tarefa->extras) && count($tarefa->extras) > 0)
+                                        <ul style="margin:0; padding-left:1.15rem; color:#444; font-size:1.04rem;">
+                                            @foreach($tarefa->extras as $ex)
+                                                <li style="margin-bottom:0.35rem;">{{ $ex }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @else
+                                        <div style="color:#888;">Sem extra</div>
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-5 d-flex flex-column" style="gap:1.5rem;">

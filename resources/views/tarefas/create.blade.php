@@ -55,10 +55,35 @@
                             <textarea class="form-control auto-resize" id="nome_tarefa" name="nome_tarefa" required rows="1" style="overflow:hidden; resize:none;">{{ old('nome_tarefa') }}</textarea>
                         </div>
                     </div>
-                    <div class="form-group add-edit-lbl">
-                        <label for="descricao">Descrição</label>
-                        <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
+
+                    <div class="form-group add-edit-lbl" style="padding-top:20px;">
+                        <!-- Itens -->
+                        <div class="list-header">
+                            <label for="itens">Itens</label>
+                            <div class="list-actions">
+                                <button type="button" id="add-item-btn" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Adicionar item (Máx. 20)" aria-label="Adicionar item"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <div id="itens-list" class="mb-2">
+                            <!-- inputs -->
+                        </div>
+
+                        <!-- Extras -->
+                        <div class="list-header">
+                            <label for="extras">Extra</label>
+                            <div class="list-actions">
+                                <button type="button" id="add-extra-btn" class="btn btn-sm btn-extra" data-toggle="tooltip" title="Adicionar extra (Máx. 5)" aria-label="Adicionar extra"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <div id="extras-list" class="mb-2">
+                            <!-- inputs -->
+                        </div>
+
+                        <!-- Anotações -->
+                        <label for="anotacao" style="padding-top:20px;">Anotações</label>
+                        <textarea class="form-control" id="anotacao" name="anotacao" rows="3"></textarea>
                     </div>
+
                     <div class="form-row align-items-end">
                         <div class="form-group col-md-3 add-edit-lbl d-flex align-items-end">
                             <div style="width:100%;">
@@ -90,7 +115,7 @@
                     </div>
                     <div class="add-edit-actions mt-4">
                         <a href="{{ route('tarefas.index') }}" class="btn btn-cancel">Cancelar</a>
-                        <button type="submit" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Confirmar</button>
+                        <button type="submit" class="btn btn-save"><i class="bi bi-plus-circle"></i> Confirmar</button>
                     </div>
                 </form>
             </div>
@@ -128,5 +153,45 @@
     }
     $('.auto-resize').each(function(){ autoResizeTextarea(this); });
     $('.auto-resize').on('input', function(){ autoResizeTextarea(this); });
+
+    // Dinâmica de itens e extras
+    function createListItem(name, value) {
+        var $input = $('<input type="text" class="form-control" name="'+name+'[]">').val(value||'');
+        var $btn = $('<button type="button" class="btn btn-outline-danger remove-item-btn"><i class="bi bi-x"></i></button>');
+        var $item = $('<div class="input-group list-item">')
+            .append($input)
+            .append($('<div class="input-group-append">').append($btn));
+        return $item;
+    }
+
+    $('#add-item-btn').on('click', function(){
+        var count = $('#itens-list .list-item').length;
+        if (count >= 20) return; // limite
+        var $new = createListItem('itens');
+        $('#itens-list').append($new);
+        $new.find('input').focus();
+    });
+    $('#add-extra-btn').on('click', function(){
+        var count = $('#extras-list .list-item').length;
+        if (count >= 5) return; // limite
+        var $new = createListItem('extras');
+        $('#extras-list').append($new);
+        $new.find('input').focus();
+    });
+
+    $(document).on('click', '.remove-item-btn', function(){
+        $(this).closest('.list-item').remove();
+    });
+
+    // On load foco no primeiro input de item ou extra
+    $(function(){
+        var $firstItem = $('#itens-list .list-item input:first');
+        if ($firstItem.length) {
+            $firstItem.focus();
+            return;
+        }
+        var $firstExtra = $('#extras-list .list-item input:first');
+        if ($firstExtra.length) $firstExtra.focus();
+    });
 </script>
 @endsection
