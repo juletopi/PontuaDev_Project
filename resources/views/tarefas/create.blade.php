@@ -52,7 +52,7 @@
                         </div>
                         <div class="form-group col add-edit-lbl" style="margin-left:1rem;">
                             <label for="nome_tarefa">Nome da tarefa <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nome_tarefa" name="nome_tarefa" required>
+                            <textarea class="form-control auto-resize" id="nome_tarefa" name="nome_tarefa" required rows="1" style="overflow:hidden; resize:none;">{{ old('nome_tarefa') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group add-edit-lbl">
@@ -120,5 +120,13 @@
     }
     $('#pontuacao').on('change', atualizarPreviewPontuacao);
     atualizarPreviewPontuacao();
+
+    // Comportamento auto-resize para textareas
+    function autoResizeTextarea(el) {
+        el.style.height = 'auto';
+        el.style.height = (el.scrollHeight) + 'px';
+    }
+    $('.auto-resize').each(function(){ autoResizeTextarea(this); });
+    $('.auto-resize').on('input', function(){ autoResizeTextarea(this); });
 </script>
 @endsection
