@@ -11,7 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        if (Schema::hasTable('tarefas') && Schema::hasColumn('tarefas', 'descricao')) {
+        // Só tenta renomear se a coluna 'descricao' existir e 'anotacao' ainda não existir.
+        if (Schema::hasTable('tarefas') && Schema::hasColumn('tarefas', 'descricao') && !Schema::hasColumn('tarefas', 'anotacao')) {
             Schema::table('tarefas', function (Blueprint $table) {
                 // Nota: renameColumn pode requerer doctrine/dbal em alguns ambientes.
                 $table->renameColumn('descricao', 'anotacao');
@@ -24,7 +25,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        if (Schema::hasTable('tarefas') && Schema::hasColumn('tarefas', 'anotacao')) {
+        // Reverte apenas se 'anotacao' existir e 'descricao' não existir (evita conflito)
+        if (Schema::hasTable('tarefas') && Schema::hasColumn('tarefas', 'anotacao') && !Schema::hasColumn('tarefas', 'descricao')) {
             Schema::table('tarefas', function (Blueprint $table) {
                 $table->renameColumn('anotacao', 'descricao');
             });
