@@ -52,7 +52,7 @@ public function index(Request $request)
             })->values();
         } else {
             // Exibe só a última tarefa semanal de cada dev
-            $tarefas = Tarefa::select('dev_id', 'numero_semana', 'nome_tarefa', 'descricao', 'pontuacao', 'data_inicio', 'data_fim', 'id')
+            $tarefas = Tarefa::select('dev_id', 'numero_semana', 'nome_tarefa', 'anotacao', 'pontuacao', 'data_inicio', 'data_fim', 'id')
                 ->with('dev')
                 ->orderByDesc('numero_semana')
                 ->get()
@@ -119,7 +119,11 @@ public function index(Request $request)
             'dev_id' => 'required|exists:devs,id',
             'numero_semana' => 'required|integer',
             'nome_tarefa' => 'required|string|max:255',
-            'descricao' => 'nullable|string',
+            'anotacao' => 'nullable|string',
+            'itens' => 'nullable|array|max:20',
+            'itens.*' => 'nullable|string|max:255',
+            'extras' => 'nullable|array|max:5',
+            'extras.*' => 'nullable|string|max:255',
             'pontuacao' => 'nullable|in:0,2,3,5,8',
             'data_inicio' => 'required|date',
             'data_fim' => 'nullable|date|after_or_equal:data_inicio',
@@ -127,6 +131,14 @@ public function index(Request $request)
 
         if (!$request->filled('pontuacao')) {
             $validated['pontuacao'] = null;
+        }
+
+        // Normalizar arrays vazios para null
+        if (isset($validated['itens']) && count(array_filter((array)$validated['itens'])) === 0) {
+            $validated['itens'] = null;
+        }
+        if (isset($validated['extras']) && count(array_filter((array)$validated['extras'])) === 0) {
+            $validated['extras'] = null;
         }
 
         $tarefa = Tarefa::create($validated);
@@ -162,7 +174,11 @@ public function index(Request $request)
             'dev_id' => 'required|exists:devs,id',
             'numero_semana' => 'required|integer',
             'nome_tarefa' => 'required|string|max:255',
-            'descricao' => 'nullable|string',
+            'anotacao' => 'nullable|string',
+            'itens' => 'nullable|array|max:20',
+            'itens.*' => 'nullable|string|max:255',
+            'extras' => 'nullable|array|max:5',
+            'extras.*' => 'nullable|string|max:255',
             'pontuacao' => 'nullable|in:0,2,3,5,8',
             'data_inicio' => 'required|date',
             'data_fim' => 'nullable|date|after_or_equal:data_inicio',
@@ -170,6 +186,13 @@ public function index(Request $request)
 
         if (!$request->filled('pontuacao')) {
             $validated['pontuacao'] = null;
+        }
+
+        if (isset($validated['itens']) && count(array_filter((array)$validated['itens'])) === 0) {
+            $validated['itens'] = null;
+        }
+        if (isset($validated['extras']) && count(array_filter((array)$validated['extras'])) === 0) {
+            $validated['extras'] = null;
         }
 
         $tarefa->update($validated);
@@ -224,7 +247,7 @@ public function index(Request $request)
                 return [$ordemFaixas[$tarefa->dev->faixa], $tarefa->dev_id];
             })->values();
         } else {
-            $tarefas = Tarefa::select('dev_id', 'numero_semana', 'nome_tarefa', 'descricao', 'pontuacao', 'data_inicio', 'data_fim', 'id')
+            $tarefas = Tarefa::select('dev_id', 'numero_semana', 'nome_tarefa', 'anotacao', 'pontuacao', 'data_inicio', 'data_fim', 'id')
                 ->with('dev')
                 ->orderByDesc('numero_semana')
                 ->get()

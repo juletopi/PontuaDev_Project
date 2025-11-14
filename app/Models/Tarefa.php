@@ -10,10 +10,19 @@ class Tarefa extends Model
         'dev_id',
         'numero_semana',
         'nome_tarefa',
-        'descricao',
+        'anotacao',
+        'itens',
+        'extras',
         'pontuacao',
         'data_inicio',
         'data_fim',
+    ];
+    
+    protected $casts = [
+        'itens' => 'array',
+        'extras' => 'array',
+        'data_inicio' => 'date',
+        'data_fim' => 'date',
     ];
     
     public function dev()
