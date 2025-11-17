@@ -130,12 +130,16 @@ public function index(Request $request)
             $validated['pontuacao'] = null;
         }
 
-        // Normalizar arrays vazios para null
-        if (isset($validated['itens']) && count(array_filter((array)$validated['itens'])) === 0) {
-            $validated['itens'] = null;
+        // Trim items/extras
+        if (isset($validated['itens']) && is_array($validated['itens'])) {
+            $itens = array_map('trim', $validated['itens']);
+            $itens = array_values(array_filter($itens, function($v) { return $v !== ''; }));
+            $validated['itens'] = count($itens) ? $itens : null;
         }
-        if (isset($validated['extras']) && count(array_filter((array)$validated['extras'])) === 0) {
-            $validated['extras'] = null;
+        if (isset($validated['extras']) && is_array($validated['extras'])) {
+            $extras = array_map('trim', $validated['extras']);
+            $extras = array_values(array_filter($extras, function($v) { return $v !== ''; }));
+            $validated['extras'] = count($extras) ? $extras : null;
         }
 
         $tarefa = Tarefa::create($validated);
@@ -181,11 +185,16 @@ public function index(Request $request)
             $validated['pontuacao'] = null;
         }
 
-        if (isset($validated['itens']) && count(array_filter((array)$validated['itens'])) === 0) {
-            $validated['itens'] = null;
+        // Trim items/extras
+        if (isset($validated['itens']) && is_array($validated['itens'])) {
+            $itens = array_map('trim', $validated['itens']);
+            $itens = array_values(array_filter($itens, function($v) { return $v !== ''; }));
+            $validated['itens'] = count($itens) ? $itens : null;
         }
-        if (isset($validated['extras']) && count(array_filter((array)$validated['extras'])) === 0) {
-            $validated['extras'] = null;
+        if (isset($validated['extras']) && is_array($validated['extras'])) {
+            $extras = array_map('trim', $validated['extras']);
+            $extras = array_values(array_filter($extras, function($v) { return $v !== ''; }));
+            $validated['extras'] = count($extras) ? $extras : null;
         }
 
         $tarefa->update($validated);
