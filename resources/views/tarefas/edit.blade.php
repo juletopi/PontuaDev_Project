@@ -3,6 +3,13 @@
 @section('title', 'Editar Tarefa')
 
 @section('content')
+
+@php
+    // Config values
+    $maxItens = config('tarefa.max_itens', 10);
+    $maxExtras = config('tarefa.max_extras', 5);
+@endphp
+
     <!-- Breadcrumb nav -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -69,48 +76,49 @@
                         <!-- Itens -->
                         <div class="list-header">
                             <label for="itens">Itens</label>
+                            <span class="items-counter" id="itens-counter" aria-live="polite" style="font-weight:600; margin-left:0.2rem;">0/{{ config('tarefa.max_itens', 10) }}</span>
                             <div class="list-actions">
-                                <button type="button" id="add-item-btn" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Adicionar item (Máx. 20)" aria-label="Adicionar item"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                                <button type="button" id="add-item-btn" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Adicionar item" aria-label="Adicionar item"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
                             </div>
                         </div>
                         <div id="itens-list" class="mb-2">
-                            @if(old('itens'))
+                                @if(old('itens'))
                                 @foreach(old('itens') as $it)
-                                    <div class="input-group mb-2 list-item">
-                                        <input type="text" class="form-control" name="itens[]" value="{{ $it }}">
+                                    <div class="input-group list-item">
+                                        <textarea class="form-control auto-resize" name="itens[]" placeholder="Digite um item..." rows="1" style="overflow:hidden; resize:none;">{{ $it }}</textarea>
                                         <div class="input-group-append"><button type="button" class="btn btn-outline-danger remove-item-btn"><i class="bi bi-x"></i></button></div>
                                     </div>
                                 @endforeach
                             @elseif($tarefa->itens)
                                 @foreach($tarefa->itens as $it)
-                                    <div class="input-group mb-2 list-item">
-                                        <input type="text" class="form-control" name="itens[]" value="{{ $it }}">
+                                    <div class="input-group list-item">
+                                        <textarea class="form-control auto-resize" name="itens[]" placeholder="Digite um item..." rows="1" style="overflow:hidden; resize:none;">{{ $it }}</textarea>
                                         <div class="input-group-append"><button type="button" class="btn btn-outline-danger remove-item-btn"><i class="bi bi-x"></i></button></div>
                                     </div>
                                 @endforeach
                             @endif
                         </div>
-                        
 
                         <!-- Extras -->
                         <div class="list-header">
                             <label for="extras">Extra</label>
+                            <span class="items-counter" id="extras-counter" aria-live="polite" style="font-weight:600; margin-left:0.2rem;">0/{{ config('tarefa.max_extras', 5) }}</span>
                             <div class="list-actions">
-                                <button type="button" id="add-extra-btn" class="btn btn-sm btn-extra" data-toggle="tooltip" title="Adicionar extra (Máx. 5)" aria-label="Adicionar extra"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                                <button type="button" id="add-extra-btn" class="btn btn-sm btn-extra" data-toggle="tooltip" title="Adicionar extra" aria-label="Adicionar extra"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
                             </div>
                         </div>
                         <div id="extras-list" class="mb-2">
-                            @if(old('extras'))
+                                @if(old('extras'))
                                 @foreach(old('extras') as $ex)
-                                    <div class="input-group mb-2 list-item">
-                                        <input type="text" class="form-control" name="extras[]" value="{{ $ex }}">
+                                    <div class="input-group list-item">
+                                        <textarea class="form-control auto-resize" name="extras[]" placeholder="Digite um extra..." rows="1" style="overflow:hidden; resize:none;">{{ $ex }}</textarea>
                                         <div class="input-group-append"><button type="button" class="btn btn-outline-danger remove-item-btn"><i class="bi bi-x"></i></button></div>
                                     </div>
                                 @endforeach
                             @elseif($tarefa->extras)
                                 @foreach($tarefa->extras as $ex)
-                                    <div class="input-group mb-2 list-item">
-                                        <input type="text" class="form-control" name="extras[]" value="{{ $ex }}">
+                                    <div class="input-group list-item">
+                                        <textarea class="form-control auto-resize" name="extras[]" placeholder="Digite um extra..." rows="1" style="overflow:hidden; resize:none;">{{ $ex }}</textarea>
                                         <div class="input-group-append"><button type="button" class="btn btn-outline-danger remove-item-btn"><i class="bi bi-x"></i></button></div>
                                     </div>
                                 @endforeach
@@ -130,11 +138,9 @@
                                     @php $selectedPontuacao = old('pontuacao', $tarefa->pontuacao ?? ''); @endphp
                                     <select class="form-control" id="pontuacao" name="pontuacao">
                                         <option value="" {{ ($selectedPontuacao === '' || is_null($selectedPontuacao)) ? 'selected' : '' }}>DOING</option>
-                                        <option value="0" {{ (string)$selectedPontuacao === '0' ? 'selected' : '' }}>Zerou</option>
-                                        <option value="2" {{ (string)$selectedPontuacao === '2' ? 'selected' : '' }}>Saiu algo</option>
-                                        <option value="3" {{ (string)$selectedPontuacao === '3' ? 'selected' : '' }}>Quase</option>
-                                        <option value="5" {{ (string)$selectedPontuacao === '5' ? 'selected' : '' }}>Deu bom</option>
-                                        <option value="8" {{ (string)$selectedPontuacao === '8' ? 'selected' : '' }}>Extra</option>
+                                        @foreach($opcoesPontuacao as $valor => $label)
+                                            <option value="{{ $valor }}" {{ (string)$selectedPontuacao === (string)$valor ? 'selected' : '' }}>{{ $label }}</option>
+                                        @endforeach
                                     </select>
                                     <div class="input-group-append">
                                         <span id="pontuacao-pts" class="input-group-text" style="border:1.5px solid #ced4da; background:#fff; font-weight:500;">{{ is_null($tarefa->pontuacao) ? '-- pts' : ($tarefa->pontuacao . ' pts') }}</span>
@@ -145,9 +151,9 @@
                         <div class="form-group col-md-7 add-edit-lbl" style="margin-left:1rem;">
                             <label>Período <span class="text-danger">*</span></label>
                             <div class="d-flex align-items-center">
-                                <input type="date" class="form-control mr-2" id="data_inicio" name="data_inicio" required value="{{ old('data_inicio', $tarefa->data_inicio) }}">
+                                <input type="date" class="form-control mr-2" id="data_inicio" name="data_inicio" required value="{{ old('data_inicio', optional($tarefa->data_inicio)->format('Y-m-d')) }}">
                                 <span class="text-muted mx-2" style="font-size:1rem;">até</span>
-                                <input type="date" class="form-control" id="data_fim" name="data_fim" style="margin-left:0.5rem;" value="{{ old('data_fim', $tarefa->data_fim) }}">
+                                <input type="date" class="form-control" id="data_fim" name="data_fim" style="margin-left:0.5rem;" value="{{ old('data_fim', optional($tarefa->data_fim)->format('Y-m-d')) }}">
                             </div>
                         </div>
                     </div>
@@ -163,6 +169,9 @@
 
 @section('scripts')
 <script>
+    var MAX_ITENS = {{ $maxItens }};
+    var MAX_EXTRAS = {{ $maxExtras }};
+
     // Preview avatar
     $('#dev_id').on('change', function() {
         var selected = $(this).find('option:selected');
@@ -190,46 +199,127 @@
         el.style.height = (el.scrollHeight) + 'px';
     }
     $('.auto-resize').each(function(){ autoResizeTextarea(this); });
-    $('.auto-resize').on('input', function(){ autoResizeTextarea(this); });
+    $(document).on('input', '.auto-resize', function(){ autoResizeTextarea(this); });
+
 
     // Dinâmica de itens e extras
     function createListItem(name, value) {
-        var $input = $('<input type="text" class="form-control" name="'+name+'[]">').val(value||'');
+        var placeholder = name === 'itens' ? 'Digite um item...' : 'Digite um extra...';
+        var $textarea = $('<textarea class="form-control auto-resize" name="'+name+'[]" placeholder="'+placeholder+'" rows="1" style="overflow:hidden; resize:none;"></textarea>').val(value||'');
         var $btn = $('<button type="button" class="btn btn-outline-danger remove-item-btn"><i class="bi bi-x"></i></button>');
         var $item = $('<div class="input-group list-item">')
-            .append($input)
+            .append($textarea)
             .append($('<div class="input-group-append">').append($btn));
         return $item;
     }
 
-    $('#add-item-btn').on('click', function(){
+    var $lastFocusedInput = null;
+    var $lastFocusedItensInput = null;
+    var $lastFocusedExtrasInput = null;
+    $(document).on('focusin', '#itens-list .list-item textarea', function(){
+        $lastFocusedInput = $(this);
+        $lastFocusedItensInput = $(this);
+    });
+    $(document).on('focusin', '#extras-list .list-item textarea', function(){
+        $lastFocusedInput = $(this);
+        $lastFocusedExtrasInput = $(this);
+    });
+
+    $('#add-item-btn').on('click', function(e){
         var count = $('#itens-list .list-item').length;
-        if (count >= 20) return; // limite
+        if (count >= MAX_ITENS) {
+            var $toFocus = $lastFocusedItensInput && $lastFocusedItensInput.length && $.contains(document, $lastFocusedItensInput[0]) ? $lastFocusedItensInput : $lastFocusedInput;
+            if ($toFocus && $toFocus.length && $.contains(document, $toFocus[0])) {
+                $toFocus.focus();
+                try { var el = $toFocus[0]; if (el.setSelectionRange) { var len = el.value.length; el.setSelectionRange(len, len); } } catch(err){}
+            }
+            return; // limite
+        }
         var $new = createListItem('itens');
         $('#itens-list').append($new);
-        $new.find('input').focus();
+        var $ta = $new.find('.auto-resize');
+        if ($ta.length) { autoResizeTextarea($ta[0]); $ta.focus(); }
+        updateCounters();
     });
-    $('#add-extra-btn').on('click', function(){
+    $('#add-extra-btn').on('click', function(e){
         var count = $('#extras-list .list-item').length;
-        if (count >= 5) return; // limite
+        if (count >= MAX_EXTRAS) {
+            var $toFocus = $lastFocusedExtrasInput && $lastFocusedExtrasInput.length && $.contains(document, $lastFocusedExtrasInput[0]) ? $lastFocusedExtrasInput : $lastFocusedInput;
+            if ($toFocus && $toFocus.length && $.contains(document, $toFocus[0])) {
+                $toFocus.focus();
+                try { var el = $toFocus[0]; if (el.setSelectionRange) { var len = el.value.length; el.setSelectionRange(len, len); } } catch(err){}
+            }
+            return; // limite
+        }
         var $new = createListItem('extras');
         $('#extras-list').append($new);
-        $new.find('input').focus();
+        var $ta = $new.find('.auto-resize');
+        if ($ta.length) { autoResizeTextarea($ta[0]); $ta.focus(); }
+        updateCounters();
     });
 
     $(document).on('click', '.remove-item-btn', function(){
-        $(this).closest('.list-item').remove();
+        var $item = $(this).closest('.list-item');
+
+        // On remove foco dos inputs ao remover
+        var $nextInput = $item.nextAll('.list-item').first().find('textarea');
+        var $prevInput = $item.prevAll('.list-item').first().find('textarea');
+        if ($nextInput.length) {
+            $nextInput.focus();
+        } else if ($prevInput.length) {
+            $prevInput.focus();
+        }
+        $item.remove();
+        updateCounters();
     });
 
-    // On load foco no primeiro input de item ou extra
+    // On load foco no primeiro textarea de item ou extra
     $(function(){
-        var $firstItem = $('#itens-list .list-item input:first');
+        var $firstItem = $('#itens-list .list-item textarea:first');
         if ($firstItem.length) {
             $firstItem.focus();
             return;
         }
-        var $firstExtra = $('#extras-list .list-item input:first');
+        var $firstExtra = $('#extras-list .list-item textarea:first');
         if ($firstExtra.length) $firstExtra.focus();
+    });
+
+    // Atualiza os contadores e estado dos botões
+    function updateCounters() {
+        var itensCount = $('#itens-list .list-item').length;
+        var extrasCount = $('#extras-list .list-item').length;
+        $('#itens-counter').text(itensCount + '/' + MAX_ITENS);
+        $('#extras-counter').text(extrasCount + '/' + MAX_EXTRAS);
+        $('#add-item-btn').toggleClass('disabled', itensCount >= MAX_ITENS).attr('aria-disabled', itensCount >= MAX_ITENS);
+        $('#add-extra-btn').toggleClass('disabled', extrasCount >= MAX_EXTRAS).attr('aria-disabled', extrasCount >= MAX_EXTRAS);
+        $('#itens-list').toggleClass('list-empty', itensCount === 0);
+        $('#extras-list').toggleClass('list-empty', extrasCount === 0);
+    }
+
+    // Init counters
+    $(function(){
+        updateCounters();
+    });
+
+    // Antes de enviar o form, remover itens/extras vazios e atualizar contadores
+    $('form[action="{{ route('tarefas.update', $tarefa->id) }}"]').on('submit', function(){
+        $('#itens-list textarea[name="itens[]"]').each(function(){
+            var v = $(this).val() ? $(this).val().trim() : '';
+            if (v === '') {
+                $(this).closest('.list-item').remove();
+            } else {
+                $(this).val(v);
+            }
+        });
+        $('#extras-list textarea[name="extras[]"]').each(function(){
+            var v = $(this).val() ? $(this).val().trim() : '';
+            if (v === '') {
+                $(this).closest('.list-item').remove();
+            } else {
+                $(this).val(v);
+            }
+        });
+        updateCounters();
     });
 </script>
 @endsection

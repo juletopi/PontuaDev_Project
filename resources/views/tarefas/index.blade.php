@@ -84,7 +84,7 @@
                     <div class="col-md-6">
                         <label>Status</label>
                         @php
-                            $statusOpcoes = [0=>'Zerou',2=>'Saiu algo',3=>'Quase',5=>'Deu bom',8=>'Extra'];
+                            $statusOpcoes = config('tarefa.default_pontuacao_options');
                             $statusSelecionados = (array) request('status', []);
                         @endphp
                         <div class="d-flex flex-wrap" style="gap:0.7rem;">
@@ -161,7 +161,7 @@
                 </thead>
                 <tbody>
                     @php
-                        $statusMap = [0=>'Zerou',2=>'Saiu algo',3=>'Quase',5=>'Deu bom',8=>'Extra'];
+                        $statusMap = config('tarefa.default_pontuacao_options');
                     @endphp
                     @foreach($tarefas as $tarefa)
                         <tr>
@@ -291,7 +291,7 @@
 
                         <div class="d-flex w-100 mt-3" style="gap:2.2rem; margin-left:6rem;">
                             @php
-                                $statusContagem = [0=>'Zerou',2=>'Saiu algo',3=>'Quase',5=>'Deu bom',8=>'Extra'];
+                                $statusContagem = config('tarefa.default_pontuacao_options');
                                 $statusCores = [
                                     0 => '#bcbcbc',
                                     2 => '#f0ce67',
@@ -373,29 +373,29 @@
                                 </div>
                                 <!-- Itens -->
                                 <label style="font-weight:700; font-size:1.13rem; margin-top:1rem;">Itens</label>
-                                <div style="background:#fff; border-radius:0.7rem; padding:0.9rem 1rem; margin-top:0.5rem;">
-                                    @if(!empty($tarefa->itens) && is_array($tarefa->itens) && count($tarefa->itens) > 0)
-                                        <ul style="margin:0; padding-left:1.15rem; color:#444; font-size:1.04rem;">
-                                            @foreach($tarefa->itens as $it)
-                                                <li style="margin-bottom:0.35rem;">{{ $it }}</li>
-                                            @endforeach
-                                        </ul>
+                                <div style="background:#fff; border-radius:0.7rem; padding:0.9rem 1rem; margin-top:-0.8rem; margin-left:-1rem;">
+                                        @if(!empty($tarefa->itens) && is_array($tarefa->itens) && count($tarefa->itens) > 0)
+                                            <ul class="tarefa-bullet-list tarefa-bullet-list--itens">
+                                                @foreach($tarefa->itens as $it)
+                                                    <li class="tarefa-bullet-item">{{ $it }}</li>
+                                                @endforeach
+                                            </ul>
                                     @else
-                                        <div style="color:#888;">Sem items</div>
+                                        <div style="color:#888; font-size:1.13rem;">Sem items</div>
                                     @endif
                                 </div>
 
                                 <!-- Extras -->
                                 <label style="font-weight:700; font-size:1.13rem; margin-top:1rem;">Extra</label>
-                                <div style="background:#fff; border-radius:0.7rem; padding:0.9rem 1rem; margin-top:0.5rem;">
+                                <div style="background:#fff; border-radius:0.7rem; padding:0.9rem 1rem; margin-top:-0.8rem; margin-left:-1rem;">
                                     @if(!empty($tarefa->extras) && is_array($tarefa->extras) && count($tarefa->extras) > 0)
-                                        <ul style="margin:0; padding-left:1.15rem; color:#444; font-size:1.04rem;">
+                                        <ul class="tarefa-bullet-list tarefa-bullet-list--extras">
                                             @foreach($tarefa->extras as $ex)
-                                                <li style="margin-bottom:0.35rem;">{{ $ex }}</li>
+                                                <li class="tarefa-bullet-item">{{ $ex }}</li>
                                             @endforeach
                                         </ul>
                                     @else
-                                        <div style="color:#888;">Sem extra</div>
+                                        <div style="color:#888; font-size:1.13rem;">Sem extra</div>
                                     @endif
                                 </div>
                             </div>

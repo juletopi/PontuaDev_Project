@@ -209,6 +209,18 @@
             outline: none;
             box-shadow: 0 0 0 3px rgba(59,132,212,0.08);
         }
+        .btn:disabled,
+        .btn[disabled],
+        .btn[aria-disabled="true"],
+        .btn:disabled:hover,
+        .btn[disabled]:hover,
+        .btn[aria-disabled="true"]:hover {
+            background-color: #e9ecef !important;
+            color: #6c757d !important;
+            border-color: #d6d8db !important;
+            box-shadow: none !important;
+            opacity: 1 !important;
+        }
         .btn-outline-primary:focus,
         .btn-outline-primary:focus-visible {
             outline: none !important;
@@ -422,12 +434,17 @@
             gap: 0.5rem;
         }
         #itens-list, #extras-list {
-            border: 1px solid #e6eaee;
+            border: 1px solid #d6d8db;
             border-radius: 6px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             gap: 0;
+        }
+        #itens-list.list-empty,
+        #extras-list.list-empty {
+            border: none !important;
+            border-radius: 0 !important;
         }
         .list-item {
             padding: 0.6rem 0.8rem;
@@ -452,6 +469,19 @@
             height: auto;
             background: transparent;
             box-sizing: border-box;
+        }
+        .list-item .form-control::placeholder {
+            color: transparent;
+            opacity: 1;
+            transition: color .12s ease;
+        }
+        .list-item:nth-child(odd) .form-control:focus::placeholder {
+            color: #6c757d;
+            opacity: 1;
+        }
+        .list-item:nth-child(even) .form-control:focus::placeholder {
+            color: #5a6b7a;
+            opacity: 1;
         }
         .list-item .input-group-append .btn {
             border: none;
@@ -482,24 +512,47 @@
             padding-top: 0;
             padding-bottom: 0;
         }
+        .items-counter {
+            font-size: 0.95rem;
+            color: #24303a;
+            margin-left: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        #extras-counter {
+            color: #794cce;
+            font-weight: 700;
+        }
+        .btn.disabled {
+            opacity: 0.6;
+            pointer-events: auto;
+        }
+        .btn.disabled:hover {
+            filter: none;
+            background: rgba(111,66,193,0.08);
+            padding: 0.18rem 0.45rem;
+        }
+        #itens-counter {
+            color: #1c6eb6;
+            font-weight: 700;
+        }
         #add-item-btn.btn-primary {
             background-color: #3b85d4;
             border-color: #3b85d4;
             color: #fff;
         }
         #add-item-btn.btn-primary:hover {
-            background-color: #1979ce;
-            border-color: #1979ce;
+            filter: brightness(.90) !important;
         }
         .btn-extra {
-            background-color: #6f42c1;
-            border: 1px solid #6f42c1;
+            background-color: #794cce;
+            border: 1px solid #794cce;
             color: #fff;
         }
         .btn-extra:hover {
-            background-color: #5a2fa8;
-            border-color: #5a2fa8;
-            color: #fff;
+            filter: brightness(.90) !important;
+            color: #fff !important;
         }
         .items-counter {
             background: #e9f0fb;
@@ -681,7 +734,30 @@
         .modal-content .modal-body {
             font-size: 1.3rem;
         }
-
+        .tarefa-bullet-list {
+            margin: 0;
+            padding-left: 1.4rem;
+            color: #444;
+            font-size: 1.04rem;
+        }
+        .tarefa-bullet-list .tarefa-bullet-item {
+            margin-bottom: 0.35rem;
+            position: relative;
+            padding-left: 1.6rem;
+            padding-top: 0.10rem;
+        }
+        .tarefa-bullet-list .tarefa-bullet-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 8px;
+            height: 8px;
+            background: #3b85d4;
+            border-radius: 50%;
+        }
+        .tarefa-bullet-list--itens .tarefa-bullet-item::before { background: #3b85d4; }
+        .tarefa-bullet-list--extras .tarefa-bullet-item::before { background: #a44fb0; }
         /* Modal excluir */
         .modal-content.modal-delete {
             border-radius: 12px;

@@ -174,7 +174,7 @@
                                             </thead>
                                             <tbody>
                                                 @php
-                                                    $statusMap = [0=>'Zerou',2=>'Saiu algo',3=>'Quase',5=>'Deu bom',8=>'Extra'];
+                                                    $statusMap = config('tarefa.default_pontuacao_options');
                                                 @endphp
                                                 @foreach($dev->tarefas_paginadas as $tarefa)
                                                     <tr>
