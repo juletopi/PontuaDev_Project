@@ -103,7 +103,7 @@ class DevController extends Controller
     {
         $dev = Dev::findOrFail($id);
         $tarefas = $dev->tarefas()->orderByDesc('numero_semana')->paginate(5);
-        $statusMap = [0=>'Zerou',2=>'Saiu algo',3=>'Quase',5=>'Deu bom',8=>'Extra'];
+        $statusMap = config('tarefa.default_pontuacao_options');
         return view('devs._tarefas', compact('tarefas', 'statusMap', 'dev'))->render();
     }
 }

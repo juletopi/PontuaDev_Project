@@ -52,7 +52,7 @@ public function index(Request $request)
             })->values();
         } else {
             // Exibe só a última tarefa semanal de cada dev
-            $tarefas = Tarefa::select('dev_id', 'numero_semana', 'nome_tarefa', 'anotacao', 'pontuacao', 'data_inicio', 'data_fim', 'id')
+            $tarefas = Tarefa::select('dev_id', 'numero_semana', 'nome_tarefa', 'anotacao', 'itens', 'extras', 'pontuacao', 'data_inicio', 'data_fim', 'id')
                 ->with('dev')
                 ->orderByDesc('numero_semana')
                 ->get()
@@ -103,26 +103,23 @@ public function index(Request $request)
     public function create()
     {
         $devs = Dev::all();
-        $opcoesPontuacao = [
-            0 => 'Zerou',
-            2 => 'Saiu algo',
-            3 => 'Quase',
-            5 => 'Deu bom',
-            8 => 'Extra',
-        ];
+        $opcoesPontuacao = config('tarefa.default_pontuacao_options');
         return view('tarefas.create', compact('devs', 'opcoesPontuacao'));
     }
 
     public function store(Request $request)
     {
+        $maxItens = config('tarefa.max_itens', 10);
+        $maxExtras = config('tarefa.max_extras', 5);
+
         $validated = $request->validate([
             'dev_id' => 'required|exists:devs,id',
             'numero_semana' => 'required|integer',
             'nome_tarefa' => 'required|string|max:255',
             'anotacao' => 'nullable|string',
-            'itens' => 'nullable|array|max:20',
+            'itens' => "nullable|array|max:$maxItens",
             'itens.*' => 'nullable|string|max:255',
-            'extras' => 'nullable|array|max:5',
+            'extras' => "nullable|array|max:$maxExtras",
             'extras.*' => 'nullable|string|max:255',
             'pontuacao' => 'nullable|in:0,2,3,5,8',
             'data_inicio' => 'required|date',
@@ -156,28 +153,24 @@ public function index(Request $request)
     {
         $tarefa = Tarefa::findOrFail($id);
         $devs = Dev::all(); 
-        $opcoesPontuacao = [
-            0 => 'Zerou',
-            2 => 'Saiu algo',
-            3 => 'Quase',
-            5 => 'Deu bom',
-            8 => 'Extra',
-        ];
+        $opcoesPontuacao = config('tarefa.default_pontuacao_options');
         return view('tarefas.edit', compact('tarefa', 'devs', 'opcoesPontuacao'));
     }
 
     public function update(Request $request, $id)
     {
         $tarefa = Tarefa::findOrFail($id);
+        $maxItens = config('tarefa.max_itens', 10);
+        $maxExtras = config('tarefa.max_extras', 5);
 
         $validated = $request->validate([
             'dev_id' => 'required|exists:devs,id',
             'numero_semana' => 'required|integer',
             'nome_tarefa' => 'required|string|max:255',
             'anotacao' => 'nullable|string',
-            'itens' => 'nullable|array|max:20',
+            'itens' => "nullable|array|max:$maxItens",
             'itens.*' => 'nullable|string|max:255',
-            'extras' => 'nullable|array|max:5',
+            'extras' => "nullable|array|max:$maxExtras",
             'extras.*' => 'nullable|string|max:255',
             'pontuacao' => 'nullable|in:0,2,3,5,8',
             'data_inicio' => 'required|date',
@@ -247,7 +240,7 @@ public function index(Request $request)
                 return [$ordemFaixas[$tarefa->dev->faixa], $tarefa->dev_id];
             })->values();
         } else {
-            $tarefas = Tarefa::select('dev_id', 'numero_semana', 'nome_tarefa', 'anotacao', 'pontuacao', 'data_inicio', 'data_fim', 'id')
+            $tarefas = Tarefa::select('dev_id', 'numero_semana', 'nome_tarefa', 'anotacao', 'itens', 'extras', 'pontuacao', 'data_inicio', 'data_fim', 'id')
                 ->with('dev')
                 ->orderByDesc('numero_semana')
                 ->get()
@@ -292,7 +285,7 @@ public function index(Request $request)
         // Reordenar desenvolvedores por pontuação total (decrescente)
         $devsFiltrados = $devsFiltrados->sortByDesc('total')->values();
         
-        $statusMap = [0=>'Zerou',2=>'Saiu algo',3=>'Quase',5=>'Deu bom',8=>'Extra'];
+        $statusMap = config('tarefa.default_pontuacao_options');
         $filename = 'listaTarefas_' . date('Ymd') . '_' . uniqid() . '.pdf';
         $pdf = Pdf::loadView('tarefas.pdf', compact('tarefas', 'devsFiltrados', 'statusMap'));
         return $pdf->download($filename);
