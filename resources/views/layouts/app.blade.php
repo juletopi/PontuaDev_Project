@@ -849,14 +849,82 @@
         @media (max-width: 600px) {
             .alert-fixed-top { min-width: 90vw; left: 5vw; transform: none; }
         }
-        /* Breadcrumb */
+        /* Breadcrumb + Menu navbar */
         .breadcrumb-item + .breadcrumb-item::before {
             content: ">";
             color: #6c757d;
             padding-left: 0.7rem;
             padding-right: 1rem;
         }
-        /* Botão Voltar ao topo */
+        .breadcrumb-card { 
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto 1rem;
+            border-radius: 8px;
+        }
+        .breadcrumb-card .breadcrumb-card-header {
+            display: flex;
+            align-items: center;
+            background: #e9ecef;
+        }
+        .breadcrumb-card .breadcrumb-toggle {
+            border: none;
+            background: transparent;
+            color: #24303a;
+            font-size: 1.45rem;
+            padding: 0.65rem 1.35rem;
+            margin-right: 0.45rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        .breadcrumb-card .breadcrumb-toggle:focus { 
+            outline: none;
+            border-radius:6px;
+            box-shadow: 0 0 0 3px rgba(59,132,212,0.12);
+        }
+        .breadcrumb-card .breadcrumb-card-breadcrumb {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+        }
+        .breadcrumb-card .breadcrumb-card-breadcrumb .breadcrumb {
+            margin: 0;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .breadcrumb-card .breadcrumb-card-breadcrumb .breadcrumb .breadcrumb-item {
+            line-height: 1.25;
+        }
+        .breadcrumb-card .breadcrumb-menu { 
+            background: #e9ecef;
+            border: none;
+            border-radius: 0 0 8px 8px;
+            padding: 0.4rem 0.6rem;
+        }
+        .breadcrumb-card .breadcrumb-menu-list { 
+            list-style: none;
+            margin: 0;
+            padding: 0.5rem;
+            display: flex;
+            gap: 0.25rem;
+            flex-direction: column;
+        }
+        .breadcrumb-card .breadcrumb-menu-list a { 
+            color: #24303a;
+            text-decoration: none;
+            padding: 0.45rem 0.6rem;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap:0.5rem;
+        }
+        .breadcrumb-card .breadcrumb-menu-list a:hover { 
+            background: rgba(59,132,212,0.06);
+            color: #1979ce;
+        }
+        /* Botão voltar ao topo */
         #botao-topo {
             position: fixed;
             bottom: 30px;
@@ -906,7 +974,35 @@
         </svg>
     </div>
 
-    <!-- Botão Voltar ao Topo -->
+    <!-- Menu navbar -->
+    <div class="breadcrumb-card card" aria-label="Breadcrumb menu card">
+            <div class="breadcrumb-card-header">
+            <button class="breadcrumb-toggle" type="button" data-toggle="collapse" data-target="#breadcrumbMenuCollapse" aria-expanded="false" aria-controls="breadcrumbMenuCollapse" aria-label="Abrir menu">
+                <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
+            <div class="breadcrumb-card-breadcrumb">
+                @hasSection('breadcrumb')
+                    @yield('breadcrumb')
+                @else
+                    <div class="breadcrumb-placeholder"></div>
+                @endif
+            </div>
+        </div>
+        <div id="breadcrumbMenuCollapse" class="collapse">
+            <div class="breadcrumb-menu">
+                <ul class="breadcrumb-menu-list">
+                    @hasSection('breadcrumb_menu_items')
+                        @yield('breadcrumb_menu_items')
+                    @else
+                        <li><a href="{{ route('devs.index') }}"><i class="bi bi-people" aria-hidden="true"></i> Lista de devs</a></li>
+                        <li><a href="{{ route('tarefas.index') }}"><i class="bi bi-list-task" aria-hidden="true"></i> Lista de tarefas</a></li>
+                    @endif
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão voltar ao topo -->
     <div id="botao-topo" data-toggle="tooltip" data-placement="left" title="Voltar ao topo">
         <i class="bi bi-arrow-up" style="font-size: 1.5rem;"></i>
     </div>
@@ -917,11 +1013,47 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Aguarda jQuery e move 'nav.breadcrumb' dentro do placeholder se necessário
+        (function(){
+            function whenJQueryReady(fn, intervalMs, timeoutMs) {
+                intervalMs = intervalMs || 40; timeoutMs = timeoutMs || 5000;
+                var waited = 0;
+                var h = setInterval(function(){
+                    if (window.jQuery) { clearInterval(h); fn(window.jQuery); }
+                    waited += intervalMs;
+                    if (waited >= timeoutMs) { clearInterval(h); }
+                }, intervalMs);
+            }
+
+            whenJQueryReady(function($){
+                $(function(){
+                    // Se não houver 'breadcrumb', movemos o nav.breadcrumb para o placeholder
+                    var $placeholder = $('.breadcrumb-placeholder');
+                    if ($placeholder.length && $.trim($placeholder.html()) === '') {
+                        var $nav = $('nav[aria-label="breadcrumb"]').first();
+                        if ($nav.length) {
+                            // Move o conteúdo do nav para o placeholder (mantendo markup)
+                            $placeholder.replaceWith($nav);
+                        }
+                    }
+                    // Gerenciar botão e visibilidade dos itens do breadcrumb
+                    $('#breadcrumbMenuCollapse').on('show.bs.collapse', function(){
+                        $('.breadcrumb-toggle').attr('aria-expanded','true');
+                        $('.breadcrumb-card-breadcrumb .breadcrumb').find('.breadcrumb-item').addClass('faded');
+                    }).on('hide.bs.collapse', function(){
+                        $('.breadcrumb-toggle').attr('aria-expanded','false');
+                        $('.breadcrumb-card-breadcrumb .breadcrumb').find('.breadcrumb-item').removeClass('faded');
+                    });
+                });
+            });
+        })();
+    </script>
+    <script>
         $(function() {
             // Tooltips
             $('[data-toggle="tooltip"]').tooltip();
             
-            // Botão Voltar ao Topo
+            // Botão voltar ao topo
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 300) {
                     $('#botao-topo').addClass('visivel');
