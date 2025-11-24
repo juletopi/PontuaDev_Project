@@ -22,5 +22,6 @@ Route::get('/tarefas/create', [TarefaController::class, 'create'])->name('tarefa
 Route::post('/tarefas', [TarefaController::class, 'store'])->name('tarefas.store');
 Route::get('/tarefas/{id}/edit', [TarefaController::class, 'edit'])->name('tarefas.edit');
 Route::put('/tarefas/{id}', [TarefaController::class, 'update'])->name('tarefas.update');
+Route::delete('/tarefas/bulk-destroy', [TarefaController::class, 'bulkDestroy'])->name('tarefas.bulkDestroy');
 Route::delete('/tarefas/{id}', [TarefaController::class, 'destroy'])->name('tarefas.destroy');
 Route::get('/tarefas/export-pdf', [TarefaController::class, 'exportPdf'])->name('tarefas.exportPdf');

@@ -669,6 +669,36 @@
             z-index: 2;
             position: relative;
         }
+        #btn-multi-select {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.5rem;
+            padding: 0.25rem 0.9rem !important;
+            box-shadow: none !important;
+        }
+        #btn-multi-select .bi { color: inherit !important; }
+        #btn-multi-select[aria-pressed="true"] {
+            background: #6c757d !important;
+            color: #ffffff !important;
+            border-color: #6c757d !important;
+        }
+        #btn-multi-select[aria-pressed="true"] .bi {
+            color: #ffffff !important;
+        }
+        #btn-multi-select:hover,
+        #btn-multi-select:focus {
+            background: #6c757d !important;
+            color: #ffffff !important;
+            border-color: #6c757d !important;
+        }
+        #btn-multi-select:focus,
+        #btn-multi-select:focus-visible {
+            outline: none !important;
+            border: 1px solid #6c757d !important;
+            box-shadow: 0 0 0 4px rgba(25,121,206,0.14) !important;
+            background: #6c757d !important;
+            color: #ffffff !important;
+        }
         #btn-export-pdf {
             background: transparent !important;
             color: #ec5c43 !important;

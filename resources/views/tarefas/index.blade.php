@@ -131,13 +131,16 @@
             <!-- Ações do form -->
             <div class="row">
                 <div class="col-md-6 d-flex justify-content-start align-items-center" style="gap:1rem; margin-top:1.6rem;">
-                    <button type="submit" class="btn btn-primary d-flex align-items-center" style="height:40px;">
+                    <button type="submit" class="btn btn-primary d-flex align-items-center" style="height:40px; white-space:nowrap;">
                         <i class="bi bi-funnel" style="font-size:1.2rem; margin-right:0.5rem;"></i> Filtrar
                     </button>
-                    <a href="{{ route('tarefas.index') }}" class="btn btn-outline-secondary d-flex align-items-center" style="height:40px;">
+                    <a href="{{ route('tarefas.index') }}" class="btn btn-outline-secondary d-flex align-items-center" style="height:40px; min-width:145px; white-space:nowrap;">
                         <i class="bi bi-x-circle" style="font-size:1.2rem; margin-right:0.5rem;"></i> Limpar filtros
                     </a>
-                    <button type="button" class="btn btn-secondary d-flex align-items-center" id="btn-export-pdf" style="height:40px; background:#6c757d; color:#fff; border:none;">
+                    <button type="button" class="btn btn-outline-secondary d-flex align-items-center" id="btn-multi-select" style="height:40px; min-width:195px; white-space:nowrap;">
+                        <i class="bi bi-check-square" style="font-size:1.2rem; margin-right:0.5rem;"></i> Selecionar tarefas
+                    </button>
+                    <button type="button" class="btn btn-secondary d-flex align-items-center" id="btn-export-pdf" style="height:40px; min-width:160px; white-space:nowrap;">
                         <i class="bi bi-download" style="font-size:1.2rem; margin-right:0.5rem;"></i> Exportar PDF
                     </button>
                 </div>
@@ -146,11 +149,121 @@
 
         <hr style="margin-top:2rem;">
 
+        <!-- Seleção múltipla -->
+        <style>
+            #tarefas-tabela .select-col {
+                width: 0px;
+                max-width: 0px;
+                padding: 0;
+                opacity: 0;
+                text-align: center;
+                overflow: hidden;
+                transition: width 220ms ease, max-width 220ms ease, opacity 180ms ease;
+            }
+            #tarefas-tabela.multi-select-active .select-col {
+                width: 56px;
+                max-width: 56px;
+                padding: 0.5rem 0.5rem;
+                opacity: 1;
+            }
+            #tarefas-tabela .select-col input { width: 20px; height: 20px; transform: translateY(3px); }
+            @keyframes checkboxSlideIn {
+                0% { transform: translateX(-8px); opacity: 0; }
+                100% { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes checkboxSlideOut {
+                0% { transform: translateX(0); opacity: 1; }
+                100% { transform: translateX(-8px); opacity: 0; }
+            }
+            #tarefas-tabela .select-col.animate-in { animation: checkboxSlideIn 200ms ease-out forwards; }
+            #tarefas-tabela .select-col.animate-out { animation: checkboxSlideOut 160ms ease-in forwards; }
+            #multiSelectOptionsModal {
+                position: fixed;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 65px;
+                margin: 0;
+                max-width: 920px;
+                width: calc(100% - 40px);
+                z-index: 1055;
+                display: none;
+                will-change: transform, opacity;
+            }
+            #multiSelectOptionsModal .bar-content {
+                box-shadow: 0 10px 36px rgba(0,0,0,0.12);
+                border-radius: 12px;
+                overflow: hidden;
+                background: #fff;
+                min-height: 64px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #multiSelectOptionsModal.visible { display: block; }
+            @keyframes multiSlideUpFade {
+                0% { transform: translateX(-50%) translateY(12px); opacity: 0; }
+                100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+            }
+            @keyframes multiSlideDownFade {
+                0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+                100% { transform: translateX(-50%) translateY(12px); opacity: 0; }
+            }
+            #multiSelectOptionsModal.animate-in { display: block; animation: multiSlideUpFade 220ms ease-out forwards; }
+            #multiSelectOptionsModal.animate-out { animation: multiSlideDownFade 180ms ease-in forwards; }
+            #multiSelectOptionsModal .bar-inner { display:flex; align-items:center; padding:0.6rem 0; gap:1rem; width:100%; height:100%; }
+            .multi-select-check-icon { color: #3b85d4; font-size:1.45rem; display:inline-flex; align-items:center; justify-content:center; border-radius:4px; box-shadow: 0 0 6px rgba(59,132,212,0.22); border: 1px solid rgba(59,132,212,0.12); }
+            .multi-select-separator { color:#cfcfcf; margin:0 0.6rem; }
+            #multiSelectCountText { font-weight:500 !important; font-size:1.12rem !important; }
+            .multi-delete-link { color: #d9534f; font-weight:540; display:inline-flex; align-items:center; gap:0.45rem; text-decoration:none; font-size:1.05rem; padding:0.70rem 0.80rem; border-radius:6px; transition: background-color 140ms ease, color 120ms ease; }
+            .multi-delete-link i { font-weight:500 !important; font-size:1.45rem; line-height:1; }
+            .multi-delete-link:hover,
+            .multi-delete-link:focus,
+            .multi-delete-link:active {
+                color: #d9534f !important;
+                background: rgba(217,83,79,0.08);
+                text-decoration: none;
+            }
+            /* Slightly stronger background while pressing */
+            .multi-delete-link:active {
+                background: rgba(217,83,79,0.12);
+            }
+            /* Remove default focus outline/box-shadow for click/focus */
+            .multi-delete-link:focus {
+                outline: none !important;
+                box-shadow: none !important;
+            }
+            .multi-close-area {
+                width: 68px;
+                padding: 1rem 0;
+                min-height: 72px;
+                height: auto;
+                box-sizing: border-box;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background: transparent;
+                border: none;
+                font-size: 1.2rem;
+                color: #666;
+                cursor: pointer;
+                border-left: 1px solid #e9ecef;
+                border-top-right-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }
+            .multi-close-area:hover { background: rgba(0,0,0,0.03); color:#333; }
+            .multi-close-area:focus,
+            .multi-close-area:active {
+                outline: none !important;
+                box-shadow: none !important;
+            }
+        </style>
+
         <!-- Tabela -->
         <div id="tarefas-tabela" class="table-responsive" style="margin-top:1rem;">
             <table class="table table-borderless table-zebra">
                 <thead>
                     <tr>
+                        <th class="select-col"><input type="checkbox" id="select-all" aria-label="Selecionar todas"></th>
                         <th>Semana</th>
                         <th>Tarefa</th>
                         <th>Responsável</th>
@@ -165,6 +278,9 @@
                     @endphp
                     @foreach($tarefas as $tarefa)
                         <tr>
+                            <td class="select-col">
+                                <input type="checkbox" class="row-select" value="{{ $tarefa->id }}" aria-label="Selecionar tarefa {{ $tarefa->id }}">
+                            </td>
                             <td>[{{ $tarefa->numero_semana }}]</td>
                             <td>{{ $tarefa->nome_tarefa }}</td>
                             <td>
@@ -322,6 +438,47 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal opções de seleção múltipla -->
+    <div id="multiSelectOptionsModal" class="multi-select-bar" role="region" aria-labelledby="multiSelectOptionsLabel" aria-hidden="true" style="display:none;">
+        <div class="bar-content" style="border-radius:1.1rem; background:#fff;">
+            <div class="bar-inner" style="display:flex; align-items:center; padding:0.25rem 0; gap:1rem; position:relative;">
+                <div style="display:flex; align-items:center; gap:0.75rem; padding-left:1rem;">
+                    <i class="bi bi-check-square multi-select-check-icon" aria-hidden="true"></i>
+                    <span id="multiSelectCountText" style="margin:0; font-size:1rem; font-weight:600;">0 Tarefa(s) selecionada(s)</span>
+                    <span class="multi-select-separator">|</span>
+                    <a href="#" id="multiDeleteBtn" class="multi-delete-link" role="button"><i class="bi bi-trash" aria-hidden="true"></i> Deletar</a>
+                </div>
+                <div style="margin-left:auto;">
+                    <button type="button" id="multiSelectOptionsClose" class="multi-close-area" aria-label="Fechar">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal confirmação de exclusão múltipla -->
+    <div class="modal fade" id="multiDeleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="multiDeleteConfirmLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-delete">
+                <div class="modal-icon">
+                    <i class="bi bi-trash" aria-hidden="true"></i>
+                </div>
+                <div class="modal-body">
+                    <h5 class="modal-title-delete" id="multiDeleteConfirmLabel">Excluir tarefas selecionadas</h5>
+                    <p class="modal-desc" id="multiDeleteConfirmDesc">Tem certeza que deseja excluir <span id="multiDeleteCount">0</span> tarefa(s) selecionada(s)?</p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-cancel" data-dismiss="modal">Cancelar</button>
+                        <form id="multiDeleteForm" action="{{ route('tarefas.bulkDestroy') }}" method="POST" style="display:inline-block;">
+                            @csrf
+                            @method('DELETE')
+                            <input type="hidden" name="ids" id="multiDeleteIds" value="">
+                            <button type="submit" class="btn-confirm">Sim, excluir tarefas</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -532,6 +689,124 @@ $(function() {
     $('#btn-export-pdf').on('click', function(){
         var params = $('#filtro-form').serialize();
         window.open("{{ route('tarefas.exportPdf') }}?" + params, '_blank');
+    });
+
+    // Selecionar multiplas tarefas
+    var $tarefasTabela = $('#tarefas-tabela');
+    var $multiBtn = $('#btn-multi-select');
+    var $multiIcon = $multiBtn.find('i');
+    var $selectAll = $('#select-all');
+    var $rowSelects = $('.row-select');
+    var $optionsModal = $('#multiSelectOptionsModal');
+    var $optionsClose = $('#multiSelectOptionsClose');
+    var $multiDeleteBtn = $('#multiDeleteBtn');
+    var $multiDeleteConfirm = $('#multiDeleteConfirmModal');
+    var $multiDeleteCount = $('#multiDeleteCount');
+    var $multiDeleteIds = $('#multiDeleteIds');
+
+    function updateSelectionCount() {
+        var ids = $('.row-select:checked').map(function(){ return $(this).val(); }).get();
+        var count = ids.length;
+        $('#multiSelectCountText').text(count + ' Tarefa(s) selecionada(s)');
+        $multiDeleteCount.text(count);
+        $multiDeleteIds.val(ids.join(','));
+        return count;
+    }
+
+    function showOptionsBar() {
+        $optionsModal.off('animationend.multi').removeClass('animate-out').addClass('visible open animate-in').attr('aria-hidden', 'false').show();
+        $optionsModal.one('animationend.multi', function() {
+            $optionsModal.removeClass('animate-in');
+        });
+    }
+
+    function hideOptionsBar() {
+        if (!$optionsModal.is(':visible') && !$optionsModal.hasClass('visible')) return;
+        $optionsModal.off('animationend.multi').removeClass('animate-in').addClass('animate-out');
+        $optionsModal.one('animationend.multi', function() {
+            $optionsModal.removeClass('visible open animate-out').attr('aria-hidden', 'true').hide();
+        });
+    }
+
+    function enableMultiSelect() {
+        // Add active state then animate the select column sliding in from left->right
+        $tarefasTabela.addClass('multi-select-active');
+        var $cols = $tarefasTabela.find('.select-col');
+        $cols.off('animationend.select').removeClass('animate-out').addClass('animate-in');
+        // cleanup animate-in after it finishes
+        $cols.one('animationend.select', function() { $(this).removeClass('animate-in'); });
+        $multiIcon.removeClass('bi-check-square').addClass('bi-check-square-fill');
+        $multiBtn.attr('aria-pressed', 'true');
+    }
+
+    function disableMultiSelect() {
+        // Animate select column out (right->left) then remove active class and clear selection
+        var $cols = $tarefasTabela.find('.select-col');
+        $cols.off('animationend.select').removeClass('animate-in').addClass('animate-out');
+        // After the animation finishes, fully collapse the column and clear selections
+        // use one timeout fallback in case animationend doesn't fire
+        var cleaned = false;
+        function finalizeDisable() {
+            if (cleaned) return; cleaned = true;
+            $tarefasTabela.removeClass('multi-select-active');
+            $cols.removeClass('animate-out');
+            $multiIcon.removeClass('bi-check-square-fill').addClass('bi-check-square');
+            $multiBtn.attr('aria-pressed', 'false');
+            $('.row-select').prop('checked', false);
+            $selectAll.prop('checked', false);
+            hideOptionsBar();
+        }
+        $cols.one('animationend.select', function() { finalizeDisable(); });
+        setTimeout(finalizeDisable, 220);
+    }
+
+    $multiBtn.on('click', function(e){
+        e.preventDefault();
+        if ($tarefasTabela.hasClass('multi-select-active')) {
+            disableMultiSelect();
+        } else {
+            enableMultiSelect();
+        }
+    });
+
+    // Seleção geral handler
+    $selectAll.on('change', function(){
+        var checked = $(this).is(':checked');
+        $('.row-select').prop('checked', checked);
+        var count = updateSelectionCount();
+        if (count > 0) {
+            if (!$optionsModal.hasClass('visible')) {
+                showOptionsBar();
+            }
+        } else {
+            hideOptionsBar();
+        }
+    });
+
+    // Seleção individual handler
+    $(document).on('change', '.row-select', function(){
+        var total = $('.row-select').length;
+        var checked = $('.row-select:checked').length;
+        $selectAll.prop('checked', checked === total && total > 0);
+        var count = updateSelectionCount();
+        if (count > 0) {
+            if (!$optionsModal.hasClass('visible')) showOptionsBar();
+        } else {
+            hideOptionsBar();
+        }
+    });
+
+    // Modal opções de seleção múltipla
+    $optionsClose.on('click', function(){
+        disableMultiSelect();
+    });
+
+    // Modal confirmação de exclusão de múltiplas tarefas
+    $multiDeleteBtn.on('click', function(e){
+        e.preventDefault();
+        var count = updateSelectionCount();
+        if (count <= 0) return;
+        $multiDeleteConfirm.modal('show');
     });
 });
 </script>

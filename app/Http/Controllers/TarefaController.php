@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tarefa;
 use App\Models\Dev;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 class TarefaController extends Controller
@@ -207,6 +208,37 @@ public function index(Request $request)
         $tarefa = Tarefa::findOrFail($id);
         $tarefa->delete();
         return redirect()->route('tarefas.index')->with('success', 'Tarefa removida com sucesso!');
+    }
+
+    /**
+     * Bulk destroy tarefas by ids
+     */
+    public function bulkDestroy(Request $request)
+    {
+        $data = $request->validate([
+            'ids' => 'required|string',
+        ]);
+
+        // ids podem vir como string CSV ("1,2,3") ou como array serializado; normalizamos
+        $raw = $data['ids'];
+        $ids = [];
+        if (is_string($raw)) {
+            $ids = array_filter(array_map('intval', explode(',', $raw)), function($v) { return $v > 0; });
+        } elseif (is_array($raw)) {
+            $ids = array_filter(array_map('intval', $raw), function($v) { return $v > 0; });
+        }
+
+        if (empty($ids)) {
+            return redirect()->route('tarefas.index')->with('success', 'Nenhuma tarefa selecionada.');
+        }
+
+        // Deletar em transação para segurança
+        
+        DB::transaction(function() use ($ids) {
+            Tarefa::whereIn('id', $ids)->delete();
+        });
+
+        return redirect()->route('tarefas.index')->with('success', count($ids) . ' tarefa(s) excluída(s) com sucesso!');
     }
 
     public function exportPdf(Request $request)
