@@ -148,7 +148,7 @@ El proyecto mantiene un historial detallado de cambios para cada versión, inclu
 - Correcciones de errores
 - Visualizaciones de la interfaz con capturas de pantalla
 
-Consulte el [CHANGELOG.md](../CHANGELOG.md) para ver el historial completo de cambios y capturas de pantalla de la interfaz.
+Consulte el [CHANGELOG.md](https://github.com/juletopi/PontuaDev_Project/blob/master/CHANGELOG.md) para ver el historial completo de cambios y capturas de pantalla de la interfaz.
 
 <div align="left">
   <h6><a href="#pontuadev"> Volver al inicio ↺</a></h6>
