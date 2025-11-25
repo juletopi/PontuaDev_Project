@@ -185,7 +185,7 @@
                 margin: 0;
                 max-width: 920px;
                 width: calc(100% - 40px);
-                z-index: 1055;
+                z-index: 1030;
                 display: none;
                 will-change: transform, opacity;
             }
@@ -450,7 +450,7 @@
                     <i class="bi bi-check-square multi-select-check-icon" aria-hidden="true"></i>
                     <span id="multiSelectCountText" style="margin:0; font-size:1rem; font-weight:600;">0 Tarefa(s) selecionada(s)</span>
                     <span class="multi-select-separator">|</span>
-                    <a href="#" id="multiDeleteBtn" class="multi-delete-link" role="button"><i class="bi bi-trash" aria-hidden="true"></i> Deletar</a>
+                    <a href="#" id="multiDeleteBtn" class="multi-delete-link" role="button"><i class="bi bi-trash" aria-hidden="true"></i> Excluir tarefas</a>
                 </div>
                 <div style="margin-left:auto;">
                     <button type="button" id="multiSelectOptionsClose" class="multi-close-area" aria-label="Fechar">&times;</button>
@@ -467,7 +467,7 @@
                     <i class="bi bi-trash" aria-hidden="true"></i>
                 </div>
                 <div class="modal-body">
-                    <h5 class="modal-title-delete" id="multiDeleteConfirmLabel">Excluir tarefas selecionadas</h5>
+                    <h5 class="modal-title-delete" id="multiDeleteConfirmLabel">Excluir tarefas</h5>
                     <p class="modal-desc" id="multiDeleteConfirmDesc">Tem certeza que deseja excluir <span id="multiDeleteCount">0</span> tarefa(s) selecionada(s)?</p>
                     <div class="modal-footer">
                         <button type="button" class="btn-cancel" data-dismiss="modal">Cancelar</button>
