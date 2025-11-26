@@ -652,7 +652,13 @@ $(function() {
     $('#data_inicio, #data_fim').on('change', function(){
         $('#semana_inicio, #semana_fim').val('');
     });
-    // Filtros avançados efeito selecionado
+    // Filtros avançados efeitos visuais e comportamento
+    function updateAdvancedToggle() {
+        var anyChecked = $('#collapseFiltrosAvancados input[type="checkbox"]:checked').length > 0;
+        $('#switch-filtros-avancados').prop('checked', anyChecked);
+        $('#collapseFiltrosAvancados').collapse(anyChecked ? 'show' : 'hide');
+    }
+
     $('.filtro-badge input[type="checkbox"]').on('change', function(){
         var $label = $(this).closest('.filtro-badge');
         if(this.checked) {
@@ -660,6 +666,7 @@ $(function() {
         } else {
             $label.removeClass('selected');
         }
+        updateAdvancedToggle();
     });
     $('.filtro-dev input[type="checkbox"]').on('change', function(){
         var $label = $(this).closest('.filtro-dev');
@@ -668,7 +675,10 @@ $(function() {
         } else {
             $label.removeClass('selected');
         }
+        updateAdvancedToggle();
     });
+    updateAdvancedToggle();
+    
     // Msg alerta
     setTimeout(function() {
         $('.alert-fixed-top').alert('close');
