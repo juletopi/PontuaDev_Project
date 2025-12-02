@@ -50,7 +50,7 @@ https://getemoji.com
 
   <div align="center">
     <p>
-      <img src="docs/images/v1.0/intro.gif" alt="PontuaDev GIF" style="max-width:100%; height:auto;" />
+      <img src="/docs/images/v1.0/intro.gif" alt="PontuaDev GIF" style="max-width:100%; height:auto;" />
     </p>
   </div>
 
