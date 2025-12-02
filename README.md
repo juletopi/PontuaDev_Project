@@ -46,7 +46,13 @@ https://getemoji.com
   <a href="#licença">Licença</a>
 </div>
 
-<br>
+----
+
+  <div align="center">
+    <p>
+      <img src="docs/images/v1.0/intro.gif" alt="PontuaDev GIFv" style="max-width:100%; height:auto;" />
+    </p>
+  </div>
 
 <!-- ABOUT THE PROJECT -->
 
