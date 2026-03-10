@@ -21,25 +21,23 @@ https://getemoji.com
 
 <div align="center">
   <a href="https://laravel.com/">
-    <img src="https://img.shields.io/badge/Made%20with%20framework:-Laravel%2012%20-gray.svg?colorA=EF6161&amp;colorB=FF2D20&amp;style=for-the-badge" alt="Laravel-badge" style="max-width: 100%;">
-    </a>
-  <a href="https://www.php.net/">
-    <img src="https://img.shields.io/badge/Made%20with%20language:-PHP%208.2%20-gray.svg?colorA=8C96C6&amp;colorB=777BB4&amp;style=for-the-badge" alt="PHP-badge" style="max-width: 100%;">
+    <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel-badge" style="max-width: 100%;">
   </a>
-</div>
-
-<div align="center">
+  <a href="https://www.php.net/">
+    <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP-badge" style="max-width: 100%;">
+  </a>
   <a href="https://getbootstrap.com/">
-      <img src="https://img.shields.io/badge/Made%20with%20library:-Bootstrap%204.5%20-gray.svg?colorA=9B7AD5&amp;colorB=7952B3&amp;style=for-the-badge" alt="Bootstrap-badge" style="max-width: 100%;">
+    <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap-badge" style="max-width: 100%;">
   </a>
   <a href="https://jquery.com/">
-      <img src="https://img.shields.io/badge/Made%20with%20library:-jQuery%203.5%20-gray.svg?colorA=2B90D9&amp;colorB=0769AD&amp;style=for-the-badge" alt="jQuery-badge" style="max-width: 100%;">
+    <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery-badge" style="max-width: 100%;">
   </a>
 </div>
 
 <br>
 
 <div align="center">
+  <a href="#about-the-project">About</a> &#xa0; • &#xa0;
   <a href="#changelog">Changelog</a> &#xa0; • &#xa0;
   <a href="#contributions">Contributions</a> &#xa0; • &#xa0;
   <a href="#installation">Installation</a> &#xa0; • &#xa0;
@@ -64,6 +62,21 @@ https://getemoji.com
 - Task management with point attribution
 - Performance tracking system
 - Deadline and delivery management
+
+### Technologies Used
+
+<a href="https://laravel.com/">
+  <img src="https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel-badge">
+</a>
+<a href="https://getbootstrap.com/">
+  <img src="https://img.shields.io/badge/Bootstrap-4.5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap-badge">
+</a>
+<a href="https://icons.getbootstrap.com/">
+  <img src="https://img.shields.io/badge/Bootstrap_Icons-1.11-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap-Icons-badge">
+</a>
+<a href="https://jquery.com/">
+  <img src="https://img.shields.io/badge/jQuery-3.5-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery-badge">
+</a>
 
 <br>
 
@@ -100,44 +113,6 @@ https://getemoji.com
     </td>
   </tr>
 </table>
-
-<div align="left">
-  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
-</div>
-
-## Requirements
-
-> [!IMPORTANT]  
-> Make sure you have the following requirements before starting:
-
-<a href="https://www.php.net/">
-  <img src="https://img.shields.io/badge/PHP-8.2_or_higher-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP-badge">
-</a>
-<a href="https://getcomposer.org/">
-  <img src="https://img.shields.io/badge/Composer-2.0_or_higher-885630?style=for-the-badge&logo=composer&logoColor=white" alt="Composer-badge">
-</a>
-<a href="https://www.postgresql.org/">
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL-badge">
-</a>
-
-<div align="left">
-  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
-</div>
-
-## Technologies Used
-
-<a href="https://laravel.com/">
-  <img src="https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel-badge">
-</a>
-<a href="https://getbootstrap.com/">
-  <img src="https://img.shields.io/badge/Bootstrap-4.5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap-badge">
-</a>
-<a href="https://icons.getbootstrap.com/">
-  <img src="https://img.shields.io/badge/Bootstrap_Icons-1.11-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap-Icons-badge">
-</a>
-<a href="https://jquery.com/">
-  <img src="https://img.shields.io/badge/jQuery-3.5-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery-badge">
-</a>
 
 <div align="left">
   <h6><a href="#pontuadev"> Back to top ↺</a></h6>
@@ -180,6 +155,19 @@ Check out the [CONTRIBUTING.md](https://github.com/juletopi/PontuaDev_Project/bl
 <!-- INSTALLATION -->
 
 ## Installation
+
+> [!IMPORTANT]  
+> Make sure you have the following requirements before starting:
+>
+> <a href="https://www.php.net/">
+>   <img src="https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white&colorA=gray&colorB=777BB4" alt="PHP-badge">
+> </a>
+> <a href="https://getcomposer.org/">
+>   <img src="https://img.shields.io/badge/Composer-2.0+-885630?style=for-the-badge&logo=composer&logoColor=white&colorA=gray&colorB=885630" alt="Composer-badge">
+> </a>
+> <a href="https://www.postgresql.org/">
+>   <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL-badge">
+> </a>
 
 1. Clone the repository
 ```bash
