@@ -78,7 +78,7 @@ https://getemoji.com
   <img src="https://img.shields.io/badge/jQuery-3.5-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery-badge">
 </a>
 
-<br>
+<br><br>
 
 <table>
   <tr>
