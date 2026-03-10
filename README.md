@@ -78,11 +78,11 @@ O **PontuaDev** é um sistema de gerenciamento para equipes de desenvolvedores, 
   <img src="https://img.shields.io/badge/jQuery-3.5-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery-badge">
 </a>
 
-<br><br>
+#### Leia a documentação traduzida para outros idiomas:
 
 <table>
   <tr>
-    <th align="center">Documentação traduzida</th>
+    <th align="center">Idiomas</th>
     <th align="center">Link</th>
   </tr>
   <tr>

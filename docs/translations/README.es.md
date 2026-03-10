@@ -78,11 +78,11 @@ https://getemoji.com
   <img src="https://img.shields.io/badge/jQuery-3.5-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery-badge">
 </a>
 
-<br><br>
+#### Lea la documentación traducida a otros idiomas:
 
 <table>
   <tr>
-    <th align="center">Documentación traducida</th>
+    <th align="center">Idiomas</th>
     <th align="center">Enlace</th>
   </tr>
   <tr>
