@@ -14,9 +14,6 @@ https://getemoji.com
     <img src="https://github.com/user-attachments/assets/549a8788-f8d4-42f3-b750-9fff9092a252" alt="PontuaDev-Logo" width="230px" title="Developer Management System">
   </a>
   <h2 align="center">PontuaDev</h2>
-  <p align="center">
-    Developer and task management system.
-  </p>
 </div>
 
 <div align="center">
@@ -56,12 +53,21 @@ https://getemoji.com
 
 ## About the project
 
-**PontuaDev** is a management system for developer teams, allowing:
+**PontuaDev** is a web management system for development teams, focused on task organization, performance tracking, and productivity incentives.
 
-- Registration of developers with detailed information
-- Task management with point attribution
-- Performance tracking system
-- Deadline and delivery management
+The application allows managing developers and their activities in a structured way, combining concepts from the **XP (Extreme Programming) methodology** with **gamification** practices, such as scoring and rankings, making the workflow more dynamic and motivating.
+
+The **XP methodology** is an agile approach based on short cycles and continuous delivery. In PontuaDev, it is applied through **weekly tasks**, with different difficulty levels and associated scores when completed, encouraging consistency, growth, and frequent delivery.
+
+**Gamification** acts as a motivational factor: developers accumulate **points** when completing tasks and, at the end of each cycle, are positioned on a **leaderboard**, promoting engagement and healthy competitiveness within the team.
+
+With PontuaDev, you can:
+
+- **Manage developers** with detailed profile information
+- **Organize tasks** by defining responsibilities and scoring
+- **Track individual and team performance** through metrics
+- **Control deadlines and deliveries**, improving activity planning
+- **Boost productivity** with a scoring and ranking system
 
 ### Technologies Used
 

@@ -14,9 +14,6 @@ https://getemoji.com
     <img src="https://github.com/user-attachments/assets/549a8788-f8d4-42f3-b750-9fff9092a252" alt="PontuaDev-Logo" width="230px" title="Sistema de Gestión de Desarrolladores">
   </a>
   <h2 align="center">PontuaDev</h2>
-  <p align="center">
-    Sistema de gestión de desarrolladores y tareas.
-  </p>
 </div>
 
 <div align="center">
@@ -56,12 +53,21 @@ https://getemoji.com
 
 ## Sobre el proyecto
 
-**PontuaDev** es un sistema de gestión para equipos de desarrolladores, que permite:
+**PontuaDev** es un sistema web de gestión para equipos de desarrollo, enfocado en la organización de tareas, el seguimiento del rendimiento y el incentivo a la productividad.
 
-- Registro de desarrolladores con información detallada
-- Gestión de tareas con atribución de puntos
-- Sistema de seguimiento del rendimiento
-- Gestión de plazos y entregas
+La aplicación permite gestionar desarrolladores y sus actividades de forma estructurada, combinando conceptos de la **metodología XP (Extreme Programming)** con prácticas de **gamificación**, como puntuación y rankings, haciendo el flujo de trabajo más dinámico y motivador.
+
+La **metodología XP** es un enfoque ágil basado en ciclos cortos y entregas continuas. En el contexto de PontuaDev, se aplica mediante **tareas semanales**, con diferentes niveles de dificultad y puntuación asociada al completarlas, incentivando consistencia, evolución y entrega frecuente.
+
+La **gamificación** actúa como un factor motivacional: los desarrolladores acumulan **puntos** al completar tareas y, al final de cada ciclo, se posicionan en un **leaderboard**, promoviendo compromiso y una competitividad saludable dentro del equipo.
+
+Con PontuaDev, es posible:
+
+- **Gestionar desarrolladores** con registro de información detallada
+- **Organizar tareas** con definición de responsabilidades y puntuación
+- **Acompañar el rendimiento** individual y colectivo mediante métricas
+- **Controlar plazos y entregas**, facilitando la planificación de actividades
+- **Incentivar la productividad** con un sistema de puntuación y ranking
 
 ### Tecnologías utilizadas
 

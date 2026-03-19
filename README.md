@@ -14,9 +14,6 @@ https://getemoji.com
     <img src="https://github.com/user-attachments/assets/549a8788-f8d4-42f3-b750-9fff9092a252" alt="PontuaDev-Logo" width="230px" title="Sistema de Gerenciamento de Desenvolvedores">
   </a>
   <h2 align="center">PontuaDev</h2>
-  <p align="center">
-    Sistema de gestão de desenvolvedores e tarefas.
-  </p>
 </div>
 
 <div align="center">
@@ -56,12 +53,21 @@ https://getemoji.com
 
 ## Sobre o projeto
 
-O **PontuaDev** é um sistema de gerenciamento para equipes de desenvolvedores, permitindo:
+O **PontuaDev** é um sistema web de gerenciamento para equipes de desenvolvimento, focado na organização de tarefas, acompanhamento de desempenho e incentivo à produtividade.
 
-- Cadastro de desenvolvedores com informações detalhadas
-- Gerenciamento de tarefas com atribuição de pontos
-- Sistema de acompanhamento de desempenho
-- Gerenciamento de prazos e entregas
+A aplicação permite gerenciar desenvolvedores e suas atividades de forma estruturada, combinando conceitos da **metodologia XP (Extreme Programming)** com práticas de **gamificação**, como pontuação e rankings, tornando o fluxo de trabalho mais dinâmico e motivador.
+
+A **metodologia XP** é uma abordagem ágil baseada em ciclos curtos e entregas contínuas. No contexto do PontuaDev, ela é aplicada por meio de **tarefas semanais**, com diferentes níveis de dificuldade e pontuação associada ao completá-las, incentivando consistência, evolução e entrega frequente.
+
+Já a **gamificação** atua como um fator motivacional: desenvolvedores acumulam **pontos** ao concluir tarefas e, ao final de cada ciclo, são posicionados em um **leaderboard**, promovendo engajamento e uma competitividade saudável dentro da equipe.
+
+Com o PontuaDev, é possível:
+
+- **Gerenciar desenvolvedores** com cadastro de informações detalhadas  
+- **Organizar tarefas** com definição de responsabilidades e pontuação  
+- **Acompanhar o desempenho** individual e coletivo por meio de métricas  
+- **Controlar prazos e entregas**, facilitando o planejamento das atividades  
+- **Incentivar a produtividade** com sistema de pontuação e ranking
 
 ### Tecnologias utilizadas
 
