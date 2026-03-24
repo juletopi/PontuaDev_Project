@@ -35,9 +35,9 @@ https://getemoji.com
 
 <div align="center">
   <a href="#about-the-project">About</a> &#xa0; • &#xa0;
+  <a href="#installation">Installation</a> &#xa0; • &#xa0;
   <a href="#changelog">Changelog</a> &#xa0; • &#xa0;
   <a href="#contributions">Contributions</a> &#xa0; • &#xa0;
-  <a href="#installation">Installation</a> &#xa0; • &#xa0;
   <a href="#license">License</a>
 </div>
 
@@ -119,40 +119,6 @@ With PontuaDev, you can:
     </td>
   </tr>
 </table>
-
-<div align="left">
-  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
-</div>
-
-<!-- CHANGELOG -->
-
-## Changelog
-
-The project maintains a detailed change history for each version, including:
-
-- New features added
-- Changes to existing features
-- Bug fixes
-- Interface visualizations with screenshots
-
-See the [CHANGELOG.md](https://github.com/juletopi/PontuaDev_Project/blob/master/CHANGELOG.md) for the complete history of changes and interface screenshots.
-
-<div align="left">
-  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
-</div>
-
-<!-- CONTRIBUTIONS -->
-
-## Contributions
-
-Contributions to the project are welcome! \
-If you wish to contribute to this project, there are several ways to do so. You can:
-- Report bugs or issues;
-- Propose new features or improvements;
-- Help improve the documentation;
-- Share the project with other people.
-
-Check out the [CONTRIBUTING.md](https://github.com/juletopi/PontuaDev_Project/blob/master/CONTRIBUTING.md) guide to learn more about how to contribute.
 
 <div align="left">
   <h6><a href="#pontuadev"> Back to top ↺</a></h6>
@@ -241,6 +207,40 @@ php artisan migrate
 ```bash
 php artisan serve
 ```
+
+<div align="left">
+  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
+</div>
+
+<!-- CHANGELOG -->
+
+## Changelog
+
+The project maintains a detailed change history for each version, including:
+
+- New features added
+- Changes to existing features
+- Bug fixes
+- Interface visualizations with screenshots
+
+See the [CHANGELOG.md](https://github.com/juletopi/PontuaDev_Project/blob/master/CHANGELOG.md) for the complete history of changes and interface screenshots.
+
+<div align="left">
+  <h6><a href="#pontuadev"> Back to top ↺</a></h6>
+</div>
+
+<!-- CONTRIBUTIONS -->
+
+## Contributions
+
+Contributions to the project are welcome! \
+If you wish to contribute to this project, there are several ways to do so. You can:
+- Report bugs or issues;
+- Propose new features or improvements;
+- Help improve the documentation;
+- Share the project with other people.
+
+Check out the [CONTRIBUTING.md](https://github.com/juletopi/PontuaDev_Project/blob/master/CONTRIBUTING.md) guide to learn more about how to contribute.
 
 <div align="left">
   <h6><a href="#pontuadev"> Back to top ↺</a></h6>
